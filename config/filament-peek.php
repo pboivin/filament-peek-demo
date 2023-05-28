@@ -67,6 +67,6 @@ return [
     |
     */
 
-    'allowIframePointerEvents' => false,
+    'allowIframePointerEvents' => true,
 
 ];

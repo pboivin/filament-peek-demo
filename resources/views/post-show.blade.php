@@ -3,6 +3,7 @@
         <div class="text-4xl text-white">
             <h1>
                 {{ $post->title }}
+                @isset($isPeekPreviewModal) [Preview] @endisset
             </h1>
         </div>
     </x-banner>
@@ -16,4 +17,10 @@
             </div>
         </div>
     </x-container>
+
+    @isset($isPeekPreviewModal)
+        <style>
+            a { pointer-events: none !important; }
+        </style>
+    @endisset
 </x-layout>
