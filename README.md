@@ -1,5 +1,7 @@
 # filament-peek-demo
 
+![Screenshots of the edit page and preview modal](./screenshot.jpg)
+
 This is a demo project showcasing the [Peek](https://github.com/pboivin/filament-peek/) plugin for [Filament](https://filamentphp.com/).
 
 ## Initial setup
