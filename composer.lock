@@ -757,16 +757,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v2.17.43",
+            "version": "v2.17.44",
             "source": {
                 "type": "git",
-                "url": "https://github.com/filamentphp/app.git",
-                "reference": "d3e067e44b981f8212740ad32e9c8d733e562b2c"
+                "url": "https://github.com/filamentphp/panels.git",
+                "reference": "a7658bd50da4b35322f1c1616de4b6abd7a6b7a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/app/zipball/d3e067e44b981f8212740ad32e9c8d733e562b2c",
-                "reference": "d3e067e44b981f8212740ad32e9c8d733e562b2c",
+                "url": "https://api.github.com/repos/filamentphp/panels/zipball/a7658bd50da4b35322f1c1616de4b6abd7a6b7a8",
+                "reference": "a7658bd50da4b35322f1c1616de4b6abd7a6b7a8",
                 "shasum": ""
             },
             "require": {
@@ -816,20 +816,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-22T21:18:35+00:00"
+            "time": "2023-05-30T10:44:54+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v2.17.43",
+            "version": "v2.17.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "a8acd3681f2b2163d6cad3478a5fe14489d53217"
+                "reference": "c6b5d4f04716f14a4d5f63f76c8b94df8029a17f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/a8acd3681f2b2163d6cad3478a5fe14489d53217",
-                "reference": "a8acd3681f2b2163d6cad3478a5fe14489d53217",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/c6b5d4f04716f14a4d5f63f76c8b94df8029a17f",
+                "reference": "c6b5d4f04716f14a4d5f63f76c8b94df8029a17f",
                 "shasum": ""
             },
             "require": {
@@ -874,20 +874,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-22T21:18:31+00:00"
+            "time": "2023-05-30T10:44:57+00:00"
         },
         {
             "name": "filament/notifications",
-            "version": "v2.17.43",
+            "version": "v2.17.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
-                "reference": "0ef9f1f3481a08f357b8e78bcb4bbcd8111a1252"
+                "reference": "a9bee8c8b7cdf1df798311acdf57895d73dd3af7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/notifications/zipball/0ef9f1f3481a08f357b8e78bcb4bbcd8111a1252",
-                "reference": "0ef9f1f3481a08f357b8e78bcb4bbcd8111a1252",
+                "url": "https://api.github.com/repos/filamentphp/notifications/zipball/a9bee8c8b7cdf1df798311acdf57895d73dd3af7",
+                "reference": "a9bee8c8b7cdf1df798311acdf57895d73dd3af7",
                 "shasum": ""
             },
             "require": {
@@ -927,20 +927,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-04T23:08:09+00:00"
+            "time": "2023-05-30T10:44:51+00:00"
         },
         {
             "name": "filament/support",
-            "version": "v2.17.43",
+            "version": "v2.17.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
-                "reference": "1e03d08cb6df27fd64e658b5316fd34f81554a8d"
+                "reference": "fe7434dd07b254de0d9cc7d9178540ad8b087cca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/support/zipball/1e03d08cb6df27fd64e658b5316fd34f81554a8d",
-                "reference": "1e03d08cb6df27fd64e658b5316fd34f81554a8d",
+                "url": "https://api.github.com/repos/filamentphp/support/zipball/fe7434dd07b254de0d9cc7d9178540ad8b087cca",
+                "reference": "fe7434dd07b254de0d9cc7d9178540ad8b087cca",
                 "shasum": ""
             },
             "require": {
@@ -977,20 +977,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-22T21:18:29+00:00"
+            "time": "2023-05-30T10:44:54+00:00"
         },
         {
             "name": "filament/tables",
-            "version": "v2.17.43",
+            "version": "v2.17.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
-                "reference": "1a57eac2388d2336c66dedf840b20a6b66a9b127"
+                "reference": "57833d3f09c6ec5fbbabec5a0e47944b972ceaa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/tables/zipball/1a57eac2388d2336c66dedf840b20a6b66a9b127",
-                "reference": "1a57eac2388d2336c66dedf840b20a6b66a9b127",
+                "url": "https://api.github.com/repos/filamentphp/tables/zipball/57833d3f09c6ec5fbbabec5a0e47944b972ceaa3",
+                "reference": "57833d3f09c6ec5fbbabec5a0e47944b972ceaa3",
                 "shasum": ""
             },
             "require": {
@@ -1033,7 +1033,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-22T21:18:35+00:00"
+            "time": "2023-05-30T10:44:53+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -2675,16 +2675,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.66.0",
+            "version": "2.67.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "496712849902241f04902033b0441b269effe001"
+                "reference": "c1001b3bc75039b07f38a79db5237c4c529e04c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/496712849902241f04902033b0441b269effe001",
-                "reference": "496712849902241f04902033b0441b269effe001",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/c1001b3bc75039b07f38a79db5237c4c529e04c8",
+                "reference": "c1001b3bc75039b07f38a79db5237c4c529e04c8",
                 "shasum": ""
             },
             "require": {
@@ -2773,7 +2773,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-29T18:53:47+00:00"
+            "time": "2023-05-25T22:09:47+00:00"
         },
         {
             "name": "nette/schema",
@@ -6809,16 +6809,16 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de"
+                "reference": "8cffffb2218e01f3b370bf763e00e81697725259"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de",
-                "reference": "0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/8cffffb2218e01f3b370bf763e00e81697725259",
+                "reference": "8cffffb2218e01f3b370bf763e00e81697725259",
                 "shasum": ""
             },
             "require": {
@@ -6846,9 +6846,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/v1.0.0"
+                "source": "https://github.com/doctrine/deprecations/tree/v1.1.0"
             },
-            "time": "2022-05-02T15:47:09+00:00"
+            "time": "2023-05-29T18:55:17+00:00"
         },
         {
             "name": "doctrine/event-manager",
