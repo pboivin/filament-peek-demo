@@ -17,10 +17,4 @@
             </div>
         </div>
     </x-container>
-
-    @isset($isPeekPreviewModal)
-        <style>
-            a { pointer-events: none !important; }
-        </style>
-    @endisset
 </x-layout>
