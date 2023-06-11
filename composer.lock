@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0baf9b2968533ba993d6dd8da34f944c",
+    "content-hash": "c4bf23df61e4dc175bbf3173a890488c",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -3064,16 +3064,16 @@
         },
         {
             "name": "pboivin/filament-peek",
-            "version": "v0.2.4",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pboivin/filament-peek.git",
-                "reference": "419ae8544bc0e032f5b61dedcd182618701579b9"
+                "reference": "adf40804873e4a81fc579e58771b4662c43e0248"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/419ae8544bc0e032f5b61dedcd182618701579b9",
-                "reference": "419ae8544bc0e032f5b61dedcd182618701579b9",
+                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/adf40804873e4a81fc579e58771b4662c43e0248",
+                "reference": "adf40804873e4a81fc579e58771b4662c43e0248",
                 "shasum": ""
             },
             "require": {
@@ -3135,9 +3135,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pboivin/filament-peek/issues",
-                "source": "https://github.com/pboivin/filament-peek/tree/v0.2.4"
+                "source": "https://github.com/pboivin/filament-peek/tree/v0.3.0"
             },
-            "time": "2023-06-10T13:54:50+00:00"
+            "time": "2023-06-11T15:33:25+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8036,16 +8036,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.8",
+            "version": "9.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e"
+                "reference": "a9aceaf20a682aeacf28d582654a1670d8826778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/17d621b3aff84d0c8b62539e269e87d8d5baa76e",
-                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a9aceaf20a682aeacf28d582654a1670d8826778",
+                "reference": "a9aceaf20a682aeacf28d582654a1670d8826778",
                 "shasum": ""
             },
             "require": {
@@ -8119,7 +8119,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.8"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.9"
             },
             "funding": [
                 {
@@ -8135,7 +8135,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-11T05:14:45+00:00"
+            "time": "2023-06-11T06:13:56+00:00"
         },
         {
             "name": "psr/cache",
