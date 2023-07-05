@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Menu;
 use App\Models\Page;
 use Illuminate\Database\Seeder;
-use App\Models\Menu;
-use App\Models\MenuItem;
 
 class SiteSeeder extends Seeder
 {
@@ -14,6 +13,11 @@ class SiteSeeder extends Seeder
         Page::factory()->create([
             'slug' => 'about',
             'title' => 'About Us',
+        ]);
+
+        Page::factory()->create([
+            'slug' => 'terms',
+            'title' => 'Terms & Conditions',
         ]);
 
         Menu::create([
@@ -32,6 +36,17 @@ class SiteSeeder extends Seeder
                 [
                     'title' => 'Contact',
                     'url' => '/contact',
+                    'type' => 'internal',
+                ],
+            ],
+        ]);
+
+        Menu::create([
+            'name' => 'footer',
+            'items' => [
+                [
+                    'title' => 'Terms & Conditions',
+                    'url' => '/terms',
                     'type' => 'internal',
                 ],
             ],

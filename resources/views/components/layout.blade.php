@@ -24,20 +24,7 @@
                             </div>
                         @endif
 
-                        @if ($mainMenu = \App\Models\Menu::whereName('main')->first())
-                            <ul class="ml-auto flex items-center space-x-4">
-                                @foreach ($mainMenu->items as $item)
-                                    <li>
-                                        <a
-                                            href="{{ $item['url'] }}"
-                                            @if ($item['type'] === 'external') target="_blank" @endif
-                                        >
-                                            {{ $item['title'] }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @endif
+                        <x-menu name="main" />
                     </nav>
                 </x-container>
             </header>
@@ -50,7 +37,10 @@
 
             <footer class="mt-auto text-center">
                 <x-container class="text-gray-700">
-                    Copyright © {{ date('Y') }} ACME inc.
+                    <div class="flex justify-center space-x-4">
+                        <span>Copyright © {{ date('Y') }} ACME inc.</span>
+                        <x-menu name="footer" />
+                    </div>
                 </x-container>
             </footer>
         </div>
