@@ -24,11 +24,20 @@
                             </div>
                         @endif
 
-                        <ul class="ml-auto flex items-center space-x-4">
-                            <li><a href="{{ route('post.index') }}">Blog</a></li>
-                            <li><a href="{{ route('about') }}">About</a></li>
-                            <li><a href="{{ route('contact') }}">Contact</a></li>
-                        </ul>
+                        @if ($mainMenu = \App\Models\Menu::whereName('main')->first())
+                            <ul class="ml-auto flex items-center space-x-4">
+                                @foreach ($mainMenu->items as $item)
+                                    <li>
+                                        <a
+                                            href="{{ $item['url'] }}"
+                                            @if ($item['type'] === 'external') target="_blank" @endif
+                                        >
+                                            {{ $item['title'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </nav>
                 </x-container>
             </header>
