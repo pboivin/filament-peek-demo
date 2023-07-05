@@ -23,11 +23,11 @@ class PageResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
-                ->columnSpanFull()
-                ->required(),
-            Forms\Components\RichEditor::make('content')
-                ->columnSpanFull()
-                ->required(),
+                    ->columnSpanFull()
+                    ->required(),
+                Forms\Components\RichEditor::make('content')
+                    ->columnSpanFull()
+                    ->required(),
             ]);
     }
 
@@ -59,8 +59,8 @@ class PageResource extends Resource
     {
         return [
             'index' => Pages\ListPages::route('/'),
+            'create' => Pages\CreatePage::route('/create'),
             'edit' => Pages\EditPage::route('/{record}/edit'),
-            // 'create' => Pages\CreatePage::route('/create'),
         ];
     }
 }

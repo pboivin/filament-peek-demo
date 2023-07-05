@@ -12,6 +12,8 @@ class ListPages extends ListRecords
 
     protected function getActions(): array
     {
-        return [];
+        return [
+            Actions\CreateAction::make(),
+        ];
     }
 }
