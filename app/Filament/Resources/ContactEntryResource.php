@@ -14,7 +14,7 @@ class ContactEntryResource extends Resource
 {
     protected static ?string $model = ContactEntry::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-mail';
 
     protected static ?string $navigationGroup = 'Contact';
 

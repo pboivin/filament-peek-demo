@@ -11,20 +11,20 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'slug',
-        'title',
+        'category_id',
         'content',
         'is_featured',
-        'main_image_url',
         'main_image_upload',
-        'category_id',
+        'main_image_url',
         'published_at',
+        'slug',
+        'title',
     ];
 
     protected $casts = [
         'created_at' => 'datetime',
-        'updated_at' => 'datetime',
         'published_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function scopePublished($query)

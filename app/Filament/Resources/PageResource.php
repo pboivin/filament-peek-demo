@@ -14,21 +14,21 @@ class PageResource extends Resource
 {
     protected static ?string $model = Page::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-document';
 
     protected static ?string $navigationGroup = 'Site';
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->columnSpanFull()
-                    ->required(),
-                Forms\Components\RichEditor::make('content')
-                    ->columnSpanFull()
-                    ->required(),
-            ]);
+        return $form->schema([
+            Forms\Components\TextInput::make('title')
+                ->columnSpanFull()
+                ->required(),
+
+            Forms\Components\RichEditor::make('content')
+                ->columnSpanFull()
+                ->required(),
+        ]);
     }
 
     public static function table(Table $table): Table
@@ -37,22 +37,11 @@ class PageResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title'),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
-            ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
+            ->filters([])
+            ->bulkActions([]);
     }
 
     public static function getPages(): array
