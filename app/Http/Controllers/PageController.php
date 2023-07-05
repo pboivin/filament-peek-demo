@@ -14,15 +14,15 @@ class PageController extends Controller
         return view('home', ['featured' => $featured]);
     }
 
-    public function about()
-    {
-        abort_unless($page = Page::whereSlug('about')->first(), 404);
-
-        return view('about', ['page' => $page]);
-    }
-
     public function contact()
     {
         return view('contact');
+    }
+
+    public function show($slug)
+    {
+        abort_unless($page = Page::whereSlug($slug)->first(), 404);
+
+        return view('about', ['page' => $page]);
     }
 }
