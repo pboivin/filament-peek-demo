@@ -12,9 +12,9 @@
         <div class="prose mt-8 mx-auto text-black">
             {!! $post->content !!}
 
-            <div class="mt-16">
-                <x-post-meta :post="$post" />
-            </div>
+            <hr>
+
+            <x-post-meta :post="$post" />
         </div>
     </x-container>
 </x-layout>

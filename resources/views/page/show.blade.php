@@ -1,4 +1,4 @@
-<x-layout title="About">
+<x-layout :title="$page->title">
     <x-banner>
         <h1>{{ $page->title }}</h1>
     </x-banner>

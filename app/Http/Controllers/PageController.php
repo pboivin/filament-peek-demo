@@ -11,18 +11,18 @@ class PageController extends Controller
     {
         $featured = Post::featured()->orderBy('published_at', 'desc')->get();
 
-        return view('home', ['featured' => $featured]);
+        return view('page.show-home', ['featured' => $featured]);
     }
 
     public function contact()
     {
-        return view('contact');
+        return view('page.show-contact');
     }
 
     public function show($slug)
     {
         abort_unless($page = Page::whereSlug($slug)->first(), 404);
 
-        return view('about', ['page' => $page]);
+        return view('page.show', ['page' => $page]);
     }
 }
