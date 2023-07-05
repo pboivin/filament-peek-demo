@@ -2,13 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ContactEntry extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
         'email',
         'message',
