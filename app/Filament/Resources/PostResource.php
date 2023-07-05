@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Support\Str;
 
 class PostResource extends Resource
@@ -51,10 +52,9 @@ class PostResource extends Resource
                     ->required(),
             ]),
 
-            Forms\Components\RichEditor::make('content')
+            TiptapEditor::make('content')
                 ->columnSpanFull()
-                ->required()
-                ->columnSpanFull(),
+                ->required(),
 
             Forms\Components\TextInput::make('main_image_url')
                 ->label('Main image URL')

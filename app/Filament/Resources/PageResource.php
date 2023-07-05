@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Support\Str;
 
 class PageResource extends Resource
@@ -40,7 +41,7 @@ class PageResource extends Resource
                     ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
             ]),
 
-            Forms\Components\RichEditor::make('content')
+            TiptapEditor::make('content')
                 ->columnSpanFull()
                 ->required(),
         ]);
