@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4bf23df61e4dc175bbf3173a890488c",
+    "content-hash": "ac2b24330e5a447ca9783fcc51be622f",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -3064,16 +3064,16 @@
         },
         {
             "name": "pboivin/filament-peek",
-            "version": "v0.3.1",
+            "version": "v1.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pboivin/filament-peek.git",
-                "reference": "f01072120b9c259ec4904186d4841b2992f3f774"
+                "reference": "d052ee22ebe04f0d022e0866db8ed854fae80f62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/f01072120b9c259ec4904186d4841b2992f3f774",
-                "reference": "f01072120b9c259ec4904186d4841b2992f3f774",
+                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/d052ee22ebe04f0d022e0866db8ed854fae80f62",
+                "reference": "d052ee22ebe04f0d022e0866db8ed854fae80f62",
                 "shasum": ""
             },
             "require": {
@@ -3135,9 +3135,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pboivin/filament-peek/issues",
-                "source": "https://github.com/pboivin/filament-peek/tree/v0.3.1"
+                "source": "https://github.com/pboivin/filament-peek/tree/v1.0.0-alpha2"
             },
-            "time": "2023-06-26T13:43:49+00:00"
+            "time": "2023-07-04T15:47:25+00:00"
         },
         {
             "name": "phpoption/phpoption",
