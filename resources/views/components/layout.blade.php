@@ -13,7 +13,7 @@
 
         @livewireStyles
     </head>
-    <body>
+    <body class="bg-white">
         <div class="flex flex-col min-h-screen">
             <header class="bg-black text-white">
                 <x-container>
