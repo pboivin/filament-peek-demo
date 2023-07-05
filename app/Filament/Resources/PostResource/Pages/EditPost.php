@@ -18,7 +18,6 @@ class EditPost extends EditRecord
     {
         return [
             PreviewAction::make(),
-            Actions\DeleteAction::make(),
         ];
     }
 

@@ -55,7 +55,9 @@ class MenuResource extends Resource
                 Tables\Columns\TextColumn::make('name'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                ]),
             ])
             ->filters([])
             ->bulkActions([]);

@@ -36,28 +36,30 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-
-                Tables\Columns\TextColumn::make('slug'),
+                Tables\Columns\TextColumn::make('name')
+                    ->sortable()
+                    ->searchable(),
 
                 Tables\Columns\TextColumn::make('posts_count')
                     ->label('Posts')
                     ->counts('posts'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
 
-                Tables\Actions\DeleteAction::make()
-                    ->before(function ($record, $action) {
-                        if ($record->posts()->count() > 0) {
-                            Notification::make()
-                                ->title("Can't delete the category, it contains posts")
-                                ->danger()
-                                ->send();
+                    Tables\Actions\DeleteAction::make()
+                        ->before(function ($record, $action) {
+                            if ($record->posts()->count() > 0) {
+                                Notification::make()
+                                    ->title("Can't delete the category, it contains posts")
+                                    ->danger()
+                                    ->send();
 
-                            $action->cancel();
-                        }
-                    }),
+                                $action->cancel();
+                            }
+                        }),
+                ]),
             ])
             ->filters([])
             ->bulkActions([]);
