@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
-use Closure;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -27,8 +26,11 @@ class PostResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->columnSpan(1)
                     ->required()
-                    ->reactive()
-                    ->afterStateUpdated(function (Closure $set, $state) {
+                    ->lazy()
+                    ->afterStateUpdated(function ($set, $get, $state) {
+                        if ($get('slug')) {
+                            return;
+                        }
                         $set('slug', Str::slug($state));
                     }),
 
@@ -47,19 +49,20 @@ class PostResource extends Resource
                 Forms\Components\Toggle::make('is_featured')
                     ->columnSpanFull()
                     ->required(),
+            ]),
 
-                Forms\Components\RichEditor::make('content')
-                    ->columnSpanFull()
-                    ->required(),
+            Forms\Components\RichEditor::make('content')
+                ->columnSpanFull()
+                ->required()
+                ->columnSpanFull(),
 
-                Forms\Components\TextInput::make('main_image_url')
-                    ->label('Main image URL')
-                    ->columnSpanFull(),
+            Forms\Components\TextInput::make('main_image_url')
+                ->label('Main image URL')
+                ->columnSpanFull(),
 
-                Forms\Components\FileUpload::make('main_image_upload')
-                    ->label('Main image upload')
-                    ->columnSpanFull(),
-            ])
+            Forms\Components\FileUpload::make('main_image_upload')
+                ->label('Main image upload')
+                ->columnSpanFull(),
         ]);
     }
 

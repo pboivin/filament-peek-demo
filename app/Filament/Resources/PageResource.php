@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Support\Str;
 
 class PageResource extends Resource
 {
@@ -21,9 +22,23 @@ class PageResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Forms\Components\TextInput::make('title')
-                ->columnSpanFull()
-                ->required(),
+            Forms\Components\Grid::make()->columns(2)->schema([
+                Forms\Components\TextInput::make('title')
+                    ->columnSpan(1)
+                    ->required()
+                    ->lazy()
+                    ->afterStateUpdated(function ($set, $get, $state) {
+                        if ($get('slug')) {
+                            return;
+                        }
+                        $set('slug', Str::slug($state));
+                    }),
+
+                Forms\Components\TextInput::make('slug')
+                    ->required()
+                    ->columnSpan(1)
+                    ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
+            ]),
 
             Forms\Components\RichEditor::make('content')
                 ->columnSpanFull()
