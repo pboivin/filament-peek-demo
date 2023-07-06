@@ -2,7 +2,7 @@
 
 @if ($post = \App\Models\Post::find($post_id))
     <a
-        class="block relative aspect-square border bg-cover bg-center"
+        class="block relative aspect-[4/3] border bg-cover bg-center"
         href="{{ route('post.show', ['slug' => $post->slug]) }}"
     >
         <img

@@ -2,7 +2,7 @@
 
 @if ($page = \App\Models\Page::find($page_id))
     <a
-        class="aspect-square p-4 border"
+        class="aspect-[4/3] p-4 border"
         href="{{ route('page.show', ['slug' => $page->slug]) }}"
     >
         {{ $text ?: $page->title }}
