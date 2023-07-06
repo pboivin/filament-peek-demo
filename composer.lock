@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d742f46e569b8c7d823d838be94fd36",
+    "content-hash": "479be76507e6de3e637a94a677bf92b3",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -3227,16 +3227,16 @@
         },
         {
             "name": "pboivin/filament-peek",
-            "version": "v1.0.0-alpha2",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pboivin/filament-peek.git",
-                "reference": "d052ee22ebe04f0d022e0866db8ed854fae80f62"
+                "reference": "50bb3d02cead3dcef7b72fa98cf2f05fa02c794e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/d052ee22ebe04f0d022e0866db8ed854fae80f62",
-                "reference": "d052ee22ebe04f0d022e0866db8ed854fae80f62",
+                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/50bb3d02cead3dcef7b72fa98cf2f05fa02c794e",
+                "reference": "50bb3d02cead3dcef7b72fa98cf2f05fa02c794e",
                 "shasum": ""
             },
             "require": {
@@ -3298,9 +3298,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pboivin/filament-peek/issues",
-                "source": "https://github.com/pboivin/filament-peek/tree/v1.0.0-alpha2"
+                "source": "https://github.com/pboivin/filament-peek/tree/1.x"
             },
-            "time": "2023-07-04T15:47:25+00:00"
+            "time": "2023-07-06T21:55:37+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -9587,16 +9587,16 @@
         },
         {
             "name": "spatie/flare-client-php",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/flare-client-php.git",
-                "reference": "82138174d5fe2829a7f085a6bdb2a06f6def9f7a"
+                "reference": "943894c6a6b00501365ac0b91ae0dce56f2226fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/82138174d5fe2829a7f085a6bdb2a06f6def9f7a",
-                "reference": "82138174d5fe2829a7f085a6bdb2a06f6def9f7a",
+                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/943894c6a6b00501365ac0b91ae0dce56f2226fa",
+                "reference": "943894c6a6b00501365ac0b91ae0dce56f2226fa",
                 "shasum": ""
             },
             "require": {
@@ -9645,7 +9645,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/flare-client-php/issues",
-                "source": "https://github.com/spatie/flare-client-php/tree/1.4.0"
+                "source": "https://github.com/spatie/flare-client-php/tree/1.4.1"
             },
             "funding": [
                 {
@@ -9653,7 +9653,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-06-28T11:08:09+00:00"
+            "time": "2023-07-06T09:29:49+00:00"
         },
         {
             "name": "spatie/ignition",
@@ -9952,7 +9952,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "pboivin/filament-peek": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
