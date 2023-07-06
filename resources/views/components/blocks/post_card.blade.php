@@ -1,5 +1,17 @@
-@props(['text'])
+@props(['post_id', 'text'])
 
-<div>
-    POST
-</div>
+@if ($post = \App\Models\Post::find($post_id))
+    <a
+        class="block relative aspect-square border bg-cover bg-center"
+        href="{{ route('post.show', ['slug' => $post->slug]) }}"
+    >
+        <img
+            class="absolute top-0 left-0 w-full h-full p-0 m-0 opacity-20"
+            src="{{ $post->getMainImage() }}"
+            alt=""
+        >
+        <div class="relative z-1 p-4">
+            {{ $text ?: $post->title }}
+        </div>
+    </a>
+@endif

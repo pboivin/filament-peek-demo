@@ -2,7 +2,9 @@
 
 namespace App\Filament\Blocks;
 
+use App\Models\Post;
 use Filament\Forms\Components\Builder\Block;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 
 class PostCard extends Block
@@ -12,7 +14,12 @@ class PostCard extends Block
         $block = parent::make($name ?: 'post_card');
 
         $block->schema([
-            TextInput::make('text'),
+            Select::make('post_id')
+                ->label('Post')
+                ->options(Post::published()->orderBy('title')->pluck('title', 'id')),
+
+            TextInput::make('text')
+                ->label('Link text (optional)'),
         ]);
 
         $block->label('Link to post');
