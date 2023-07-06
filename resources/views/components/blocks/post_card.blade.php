@@ -6,7 +6,7 @@
         href="{{ route('post.show', ['slug' => $post->slug]) }}"
     >
         <img
-            class="absolute top-0 left-0 w-full h-full p-0 m-0 opacity-20 object-center obect-cover"
+            class="absolute top-0 left-0 w-full h-full p-0 m-0 opacity-20 object-center object-cover"
             src="{{ $post->getMainImage() }}"
             alt=""
         >
