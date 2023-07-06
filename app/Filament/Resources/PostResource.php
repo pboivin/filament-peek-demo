@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Fields\PostFooter;
+use App\Filament\Fields\PostContent;
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
 use Filament\Forms;
@@ -9,7 +11,6 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Support\Str;
 
 class PostResource extends Resource
@@ -52,9 +53,13 @@ class PostResource extends Resource
                     ->required(),
             ]),
 
-            TiptapEditor::make('content')
-                ->columnSpanFull()
-                ->required(),
+            PostContent::make('content_blocks')
+                ->label('Content')
+                ->columnSpanFull(),
+
+            PostFooter::make('footer_blocks')
+                ->label('Recirculation')
+                ->columnSpanFull(),
 
             Forms\Components\TextInput::make('main_image_url')
                 ->label('Main image URL')

@@ -19,7 +19,8 @@ return new class extends Migration
             $table->dateTime('published_at')->nullable();
             $table->string('slug')->unique();
             $table->string('title');
-            $table->text('content');
+            $table->text('content_blocks')->nullable();
+            $table->text('footer_blocks')->nullable();
             $table->text('main_image_url')->nullable();
             $table->text('main_image_upload')->nullable();
             $table->foreignId('category_id')

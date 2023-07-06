@@ -12,7 +12,8 @@ class Post extends Model
 
     protected $fillable = [
         'category_id',
-        'content',
+        'content_blocks',
+        'footer_blocks',
         'is_featured',
         'main_image_upload',
         'main_image_url',
@@ -25,6 +26,8 @@ class Post extends Model
         'created_at' => 'datetime',
         'published_at' => 'datetime',
         'updated_at' => 'datetime',
+        'content_blocks' => 'array',
+        'footer_blocks' => 'array',
     ];
 
     public function scopePublished($query)
