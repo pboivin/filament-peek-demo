@@ -2,15 +2,14 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Fields\PageContent;
 use App\Filament\Resources\PageResource\Pages;
 use App\Models\Page;
 use Filament\Forms;
-use Filament\Forms\Components\Field;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Support\Str;
 use Pboivin\FilamentPeek\Forms\Components\PreviewLink;
 
@@ -21,13 +20,6 @@ class PageResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document';
 
     protected static ?string $navigationGroup = 'Site';
-
-    public static function contentField(string $context = 'form'): Field
-    {
-        return TiptapEditor::make('content')
-            ->columnSpanFull()
-            ->required();
-    }
 
     public static function form(Form $form): Form
     {
@@ -56,7 +48,7 @@ class PageResource extends Resource
                 ->columnSpanFull()
                 ->alignRight(),
 
-            self::contentField(),
+            PageContent::make()->required(),
         ]);
     }
 
