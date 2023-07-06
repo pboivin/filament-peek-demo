@@ -1,4 +1,4 @@
-<x-layout title="Contact">
+<x-layouts.main title="Contact">
     <x-banner>
         <h1>Contact Us</h1>
     </x-banner>
@@ -8,4 +8,4 @@
             @livewire('contact-form')
         </div>
     </x-container>
-</x-layout>
+</x-layouts.main>

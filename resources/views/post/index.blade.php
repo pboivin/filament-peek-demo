@@ -1,3 +1,3 @@
-<x-layout title="Blog">
+<x-layouts.main title="Blog">
     @livewire('post-list')
-</x-layout>
+</x-layouts.main>

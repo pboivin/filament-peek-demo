@@ -1,4 +1,4 @@
-<x-layout :title="$page->title">
+<x-layouts.main :title="$page->title">
     <x-banner>
         <h1>{{ $page->title }}</h1>
     </x-banner>
@@ -8,4 +8,4 @@
             {!! $page->content !!}
         </div>
     </x-container>
-</x-layout>
+</x-layouts.main>

@@ -1,4 +1,4 @@
-<x-layout :site-name="false">
+<x-layouts.main :site-name="false">
     <div class="site-intro flex items-center justify-center bg-black text-white">
         <h1 class="text-[80px] lg:text-[140px]">{{ config('app.name') }}</h1>
     </div>
@@ -14,4 +14,4 @@
             </div>
         @endif
     </x-container>
-</x-layout>
+</x-layouts.main>
