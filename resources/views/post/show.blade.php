@@ -18,7 +18,7 @@
 
             <x-post-meta :post="$post" />
 
-            <x-post-footer :post="$post" />
+            <x-post-footer :blocks="$post->footer_blocks" />
         </div>
     </x-container>
 </x-layouts.main>

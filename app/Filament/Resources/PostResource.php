@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Fields\PostFooter;
 use App\Filament\Fields\PostContent;
+use App\Filament\Fields\PostFooter;
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
 use Filament\Forms;
@@ -12,6 +12,7 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Support\Str;
+use Pboivin\FilamentPeek\Forms\Components\PreviewLink;
 
 class PostResource extends Resource
 {
@@ -53,12 +54,24 @@ class PostResource extends Resource
                     ->required(),
             ]),
 
+            PreviewLink::make()
+                ->label('Preview Content')
+                ->builderPreview('content_blocks')
+                ->columnSpanFull()
+                ->alignRight(),
+
             PostContent::make('content_blocks')
                 ->label('Content')
                 ->columnSpanFull(),
 
+            PreviewLink::make()
+                ->label('Preview Footer')
+                ->builderPreview('footer_blocks')
+                ->columnSpanFull()
+                ->alignRight(),
+
             PostFooter::make('footer_blocks')
-                ->label('Recirculation')
+                ->label('Footer')
                 ->columnSpanFull(),
 
             Forms\Components\TextInput::make('main_image_url')
