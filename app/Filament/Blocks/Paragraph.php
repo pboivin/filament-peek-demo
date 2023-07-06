@@ -3,21 +3,27 @@
 namespace App\Filament\Blocks;
 
 use Filament\Forms\Components\Builder\Block;
-use FilamentTiptapEditor\TiptapEditor;
+use Filament\Forms\Components\RichEditor;
 
-class Paragraph extends Block
+class Paragraph
 {
-    public static function make(?string $name = null): static
-    {
-        $block = parent::make($name ?: 'paragraph');
-
-        $block->schema([
-            TiptapEditor::make('text')
-                ->disableBubbleMenus()
-                ->disableFloatingMenus()
-                ->profile('barebone'),
-        ]);
-
-        return $block;
+    public static function build(
+        string $name = 'paragraph',
+        string $context = 'form',
+    ): Block {
+        return Block::make($name)
+            ->schema([
+                RichEditor::make('text')
+                    ->toolbarButtons([
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'strike',
+                        'underline',
+                    ]),
+            ]);
     }
 }

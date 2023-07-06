@@ -15,9 +15,9 @@ class PostContent
     ): Builder {
         return Builder::make($name)
             ->blocks([
-                Title::make(),
-                Paragraph::make(),
-                Image::make(),
+                Title::build(context: $context),
+                Paragraph::build(context: $context),
+                Image::build(context: $context),
             ])
             ->collapsible();
     }

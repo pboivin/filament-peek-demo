@@ -14,8 +14,8 @@ class PostFooter
     ): Builder {
         return Builder::make($name)
             ->blocks([
-                PostCard::make(),
-                PageCard::make(),
+                PostCard::build(context: $context),
+                PageCard::build(context: $context),
             ])
             ->collapsible();
     }
