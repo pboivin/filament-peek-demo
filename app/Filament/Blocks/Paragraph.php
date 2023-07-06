@@ -3,7 +3,7 @@
 namespace App\Filament\Blocks;
 
 use Filament\Forms\Components\Builder\Block;
-use Filament\Forms\Components\TextInput;
+use FilamentTiptapEditor\TiptapEditor;
 
 class Paragraph extends Block
 {
@@ -12,7 +12,10 @@ class Paragraph extends Block
         $block = parent::make($name ?: 'paragraph');
 
         $block->schema([
-            TextInput::make('text'),
+            TiptapEditor::make('text')
+                ->disableBubbleMenus()
+                ->disableFloatingMenus()
+                ->profile('barebone'),
         ]);
 
         return $block;

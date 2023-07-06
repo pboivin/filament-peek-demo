@@ -1,5 +1,3 @@
-@props(['text'])
+@props(['text', 'level'])
 
-<div>
-    TITLE BLOCK
-</div>
+<{{ $level }}>{{ $text }}</{{ $level }}>
