@@ -51,11 +51,10 @@ class PageResource extends Resource
             ]),
 
             PreviewLink::make()
-                ->label('Open Content Preview')
+                ->label('Preview Content')
                 ->builderPreview('content')
                 ->columnSpanFull()
-                ->alignRight()
-                ->underline(),
+                ->alignRight(),
 
             self::contentField(),
         ]);
