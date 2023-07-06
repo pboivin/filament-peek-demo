@@ -4,11 +4,13 @@ namespace App\Filament\Fields;
 
 use FilamentTiptapEditor\TiptapEditor;
 
-class PageContent extends TiptapEditor
+class PageContent
 {
-    public static function make(?string $name = null): static
-    {
-        return parent::make($name ?: 'content')
+    public static function build(
+        string $name,
+        string $context = 'form',
+    ): TiptapEditor {
+        return TiptapEditor::make($name)
             ->columnSpanFull();
     }
 }

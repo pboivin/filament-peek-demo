@@ -41,7 +41,10 @@ class EditPage extends EditRecord
     public static function getBuilderEditorSchema(string $builderName): array
     {
         return [
-            PageContent::make(),
+            PageContent::build(
+                name: 'content',
+                context: 'preview',
+            ),
         ];
     }
 

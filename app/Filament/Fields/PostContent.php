@@ -7,18 +7,18 @@ use App\Filament\Blocks\Paragraph;
 use App\Filament\Blocks\Title;
 use Filament\Forms\Components\Builder;
 
-class PostContent extends Builder
+class PostContent
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->blocks([
-            Title::make(),
-            Paragraph::make(),
-            Image::make(),
-        ]);
-
-        $this->collapsible();
+    public static function build(
+        string $name,
+        string $context = 'form',
+    ): Builder {
+        return Builder::make($name)
+            ->blocks([
+                Title::make(),
+                Paragraph::make(),
+                Image::make(),
+            ])
+            ->collapsible();
     }
 }

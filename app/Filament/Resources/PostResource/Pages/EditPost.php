@@ -46,8 +46,19 @@ class EditPost extends EditRecord
     {
         return [
             match ($builderName) {
-                'content_blocks' => PostContent::make('content_blocks')->label('Content')->columnSpanFull(),
-                'footer_blocks' => PostFooter::make('footer_blocks')->label('Footer')->columnSpanFull(),
+                'content_blocks' => PostContent::build(
+                    name: 'content_blocks',
+                    context: 'preview',
+                )
+                    ->label('Content')
+                    ->columnSpanFull(),
+
+                'footer_blocks' => PostFooter::build(
+                    name: 'footer_blocks',
+                    context: 'preview',
+                )
+                    ->label('Footer')
+                    ->columnSpanFull(),
             },
         ];
     }
