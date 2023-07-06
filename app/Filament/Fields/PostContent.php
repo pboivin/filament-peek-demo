@@ -18,5 +18,7 @@ class PostContent extends Builder
             Paragraph::make(),
             Image::make(),
         ]);
+
+        $this->collapsible();
     }
 }

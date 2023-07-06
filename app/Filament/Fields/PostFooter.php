@@ -16,5 +16,7 @@ class PostFooter extends Builder
             PostCard::make(),
             PageCard::make(),
         ]);
+
+        $this->collapsible();
     }
 }
