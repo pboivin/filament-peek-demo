@@ -121,6 +121,7 @@ return [
         // Experimental options (may break in a future release)
         'experimental' => [
             'showAutoRefreshToggle' => true,
+            'restoreIframePositionOnRefresh' => true,
             'autoRefreshDebounceMilliseconds' => 250,
         ],
 
