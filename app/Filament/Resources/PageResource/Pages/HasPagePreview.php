@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\PageResource\Pages;
 
 use App\Filament\Fields\PageContent;
+use Filament\Forms\Components\Component;
 use Pboivin\FilamentPeek\Pages\Actions\PreviewAction;
 use Pboivin\FilamentPeek\Pages\Concerns\HasBuilderPreview;
 use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
@@ -34,7 +35,7 @@ trait HasPagePreview
         return 'page.preview-content';
     }
 
-    public static function getBuilderEditorSchema(string $builderName): array
+    public static function getBuilderEditorSchema(string $builderName): Component|array
     {
         return [
             PageContent::build(
@@ -46,7 +47,7 @@ trait HasPagePreview
 
     public function updateBuilderFieldWithEditorData(string $builderName, array $editorData): void
     {
-        if ($editorData[$builderName] ?? false) {
+        if (array_key_exists($builderName, $editorData)) {
             $this->data[$builderName] = $editorData[$builderName];
         }
 

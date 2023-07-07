@@ -4,6 +4,7 @@ namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Fields\PostContent;
 use App\Filament\Fields\PostFooter;
+use Filament\Forms\Components\Component;
 use Pboivin\FilamentPeek\Pages\Actions\PreviewAction;
 use Pboivin\FilamentPeek\Pages\Concerns\HasBuilderPreview;
 use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
@@ -38,24 +39,22 @@ trait HasPostPreview
         };
     }
 
-    public static function getBuilderEditorSchema(string $builderName): array
+    public static function getBuilderEditorSchema(string $builderName): Component|array
     {
-        return [
-            match ($builderName) {
-                'content_blocks' => PostContent::build(
-                    name: 'content_blocks',
-                    context: 'preview',
-                )
-                    ->label('Content')
-                    ->columnSpanFull(),
+        return match ($builderName) {
+            'content_blocks' => PostContent::build(
+                name: 'content_blocks',
+                context: 'preview',
+            )
+                ->label('Content')
+                ->columnSpanFull(),
 
-                'footer_blocks' => PostFooter::build(
-                    name: 'footer_blocks',
-                    context: 'preview',
-                )
-                    ->label('Footer')
-                    ->columnSpanFull(),
-            },
-        ];
+            'footer_blocks' => PostFooter::build(
+                name: 'footer_blocks',
+                context: 'preview',
+            )
+                ->label('Footer')
+                ->columnSpanFull(),
+        };
     }
 }
