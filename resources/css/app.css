@@ -8,6 +8,10 @@ a, .prose a {
     @apply text-green-800 no-underline font-medium;
 }
 
+.prose img {
+    @apply bg-gray-200;
+}
+
 @tailwind components;
 
 .main-nav {
