@@ -67,5 +67,15 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "peek": {
+            "type": "path",
+            "url": "/home/pboivin/Workspace/projects/filament-peek/dev/filament-peek"
+        },
+        "tiptap": {
+            "type": "path",
+            "url": "/home/pboivin/Workspace/contrib/filament-tiptap-editor"
+        }
+    }
 }
