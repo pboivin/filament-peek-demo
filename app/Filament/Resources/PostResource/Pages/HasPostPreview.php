@@ -57,4 +57,13 @@ trait HasPostPreview
                 ->columnSpanFull(),
         };
     }
+
+    public function updateBuilderFieldWithEditorData(string $builderName, array $editorData): void
+    {
+        if (array_key_exists($builderName, $editorData)) {
+            $this->data[$builderName] = $editorData[$builderName];
+        }
+
+        $this->dispatchBrowserEvent('refresh-tiptap-editors');
+    }
 }

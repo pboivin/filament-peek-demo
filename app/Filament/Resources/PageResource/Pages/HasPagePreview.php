@@ -51,12 +51,6 @@ trait HasPagePreview
             $this->data[$builderName] = $editorData[$builderName];
         }
 
-        if ($builderName === 'content') {
-            // Refresh the Tiptap editor UI after updating the field data
-            $this->dispatchBrowserEvent('update-editor-content', [
-                'statePath' => "data.{$builderName}",
-                'content' => $editorData[$builderName],
-            ]);
-        }
+        $this->dispatchBrowserEvent('refresh-tiptap-editors');
     }
 }
