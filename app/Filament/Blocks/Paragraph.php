@@ -7,7 +7,7 @@ use FilamentTiptapEditor\TiptapEditor;
 
 class Paragraph
 {
-    public static function build(
+    public static function make(
         string $name = 'paragraph',
         string $context = 'form',
     ): Block {

@@ -6,7 +6,7 @@ use FilamentTiptapEditor\TiptapEditor;
 
 class PageContent
 {
-    public static function build(
+    public static function make(
         string $name,
         string $context = 'form',
     ): TiptapEditor {

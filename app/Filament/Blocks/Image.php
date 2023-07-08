@@ -9,7 +9,7 @@ use Filament\Forms\Components\TextInput;
 
 class Image
 {
-    public static function build(
+    public static function make(
         string $name = 'image',
         string $context = 'form',
     ): Block {

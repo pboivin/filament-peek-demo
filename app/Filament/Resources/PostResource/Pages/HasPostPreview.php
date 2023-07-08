@@ -42,14 +42,14 @@ trait HasPostPreview
     public static function getBuilderEditorSchema(string $builderName): Component|array
     {
         return match ($builderName) {
-            'content_blocks' => PostContent::build(
+            'content_blocks' => PostContent::make(
                 name: 'content_blocks',
                 context: 'preview',
             )
                 ->label('Content')
                 ->columnSpanFull(),
 
-            'footer_blocks' => PostFooter::build(
+            'footer_blocks' => PostFooter::make(
                 name: 'footer_blocks',
                 context: 'preview',
             )

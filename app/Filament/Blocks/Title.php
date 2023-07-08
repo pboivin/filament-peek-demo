@@ -8,7 +8,7 @@ use Filament\Forms\Components\TextInput;
 
 class Title
 {
-    public static function build(
+    public static function make(
         string $name = 'title',
         string $context = 'form',
     ): Block {

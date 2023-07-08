@@ -48,7 +48,7 @@ class PageResource extends Resource
                 ->columnSpanFull()
                 ->alignRight(),
 
-            PageContent::build('content')
+            PageContent::make('content')
                 ->required(),
         ]);
     }

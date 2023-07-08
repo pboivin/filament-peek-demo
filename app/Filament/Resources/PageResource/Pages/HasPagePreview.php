@@ -38,7 +38,7 @@ trait HasPagePreview
     public static function getBuilderEditorSchema(string $builderName): Component|array
     {
         return [
-            PageContent::build(
+            PageContent::make(
                 name: 'content',
                 context: 'preview',
             ),

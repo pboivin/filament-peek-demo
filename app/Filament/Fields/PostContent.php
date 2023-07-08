@@ -9,15 +9,15 @@ use Filament\Forms\Components\Builder;
 
 class PostContent
 {
-    public static function build(
+    public static function make(
         string $name,
         string $context = 'form',
     ): Builder {
         return Builder::make($name)
             ->blocks([
-                Title::build(context: $context),
-                Paragraph::build(context: $context),
-                Image::build(context: $context),
+                Title::make(context: $context),
+                Paragraph::make(context: $context),
+                Image::make(context: $context),
             ])
             ->collapsible();
     }

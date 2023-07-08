@@ -9,7 +9,7 @@ use Filament\Forms\Components\TextInput;
 
 class PostCard
 {
-    public static function build(
+    public static function make(
         string $name = 'post_card',
         string $context = 'form',
     ): Block {

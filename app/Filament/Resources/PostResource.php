@@ -60,7 +60,7 @@ class PostResource extends Resource
                 ->columnSpanFull()
                 ->alignRight(),
 
-            PostContent::build('content_blocks')
+            PostContent::make('content_blocks')
                 ->label('Content')
                 ->columnSpanFull(),
 
@@ -70,7 +70,7 @@ class PostResource extends Resource
                 ->columnSpanFull()
                 ->alignRight(),
 
-            PostFooter::build('footer_blocks')
+            PostFooter::make('footer_blocks')
                 ->label('Footer')
                 ->columnSpanFull(),
 

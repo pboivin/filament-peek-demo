@@ -8,14 +8,14 @@ use Filament\Forms\Components\Builder;
 
 class PostFooter
 {
-    public static function build(
+    public static function make(
         string $name,
         string $context = 'form',
     ): Builder {
         return Builder::make($name)
             ->blocks([
-                PostCard::build(context: $context),
-                PageCard::build(context: $context),
+                PostCard::make(context: $context),
+                PageCard::make(context: $context),
             ])
             ->collapsible();
     }

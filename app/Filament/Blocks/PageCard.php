@@ -9,7 +9,7 @@ use Filament\Forms\Components\TextInput;
 
 class PageCard
 {
-    public static function build(
+    public static function make(
         string $name = 'page_card',
         string $context = 'form',
     ): Block {
