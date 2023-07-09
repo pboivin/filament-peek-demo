@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "479be76507e6de3e637a94a677bf92b3",
+    "content-hash": "7f9682455a454fbe0a010be52e23907f",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -3227,16 +3227,16 @@
         },
         {
             "name": "pboivin/filament-peek",
-            "version": "1.x-dev",
+            "version": "v1.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pboivin/filament-peek.git",
-                "reference": "c3e17ddcd02b1a109613bd549ada66fcdf36027c"
+                "reference": "db467a883ccb63d43612d8683c65ded839ac0df7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/c3e17ddcd02b1a109613bd549ada66fcdf36027c",
-                "reference": "c3e17ddcd02b1a109613bd549ada66fcdf36027c",
+                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/db467a883ccb63d43612d8683c65ded839ac0df7",
+                "reference": "db467a883ccb63d43612d8683c65ded839ac0df7",
                 "shasum": ""
             },
             "require": {
@@ -3298,9 +3298,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pboivin/filament-peek/issues",
-                "source": "https://github.com/pboivin/filament-peek/tree/1.x"
+                "source": "https://github.com/pboivin/filament-peek/tree/v1.0.0-beta1"
             },
-            "time": "2023-07-09T17:47:31+00:00"
+            "time": "2023-07-09T18:43:57+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -9952,9 +9952,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "pboivin/filament-peek": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
