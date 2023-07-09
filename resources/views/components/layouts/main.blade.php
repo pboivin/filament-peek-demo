@@ -37,7 +37,7 @@
 
             <footer class="mt-auto text-center">
                 <x-container class="text-gray-700">
-                    <div class="flex items-center justify-center space-x-4">
+                    <div class="flex flex-col lg:flex-row items-center justify-center space-x-4">
                         <span>Copyright © {{ date('Y') }} ACME inc.</span>
                         <x-menu name="footer" />
                     </div>
