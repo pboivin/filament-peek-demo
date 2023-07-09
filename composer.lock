@@ -3232,12 +3232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pboivin/filament-peek.git",
-                "reference": "cd3eba0386caa3c263a47f5da0da932544ee5dc4"
+                "reference": "7990b687ea6ab24e1bf7be9ac792e15643f799ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/cd3eba0386caa3c263a47f5da0da932544ee5dc4",
-                "reference": "cd3eba0386caa3c263a47f5da0da932544ee5dc4",
+                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/7990b687ea6ab24e1bf7be9ac792e15643f799ce",
+                "reference": "7990b687ea6ab24e1bf7be9ac792e15643f799ce",
                 "shasum": ""
             },
             "require": {
@@ -3301,7 +3301,7 @@
                 "issues": "https://github.com/pboivin/filament-peek/issues",
                 "source": "https://github.com/pboivin/filament-peek/tree/1.x"
             },
-            "time": "2023-07-09T03:53:37+00:00"
+            "time": "2023-07-09T15:11:44+00:00"
         },
         {
             "name": "phpoption/phpoption",
