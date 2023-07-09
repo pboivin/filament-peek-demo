@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4525cce23d7610b86867aa5934563e0",
+    "content-hash": "479be76507e6de3e637a94a677bf92b3",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -77,7 +77,7 @@
         },
         {
             "name": "awcodes/filament-tiptap-editor",
-            "version": "2.x-dev",
+            "version": "v2.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/awcodes/filament-tiptap-editor.git",
@@ -108,7 +108,6 @@
                 "phpunit/phpunit": "^9.5|^10.0",
                 "spatie/laravel-ray": "^1.26"
             },
-            "default-branch": true,
             "type": "package",
             "extra": {
                 "laravel": {
@@ -145,7 +144,7 @@
             ],
             "support": {
                 "issues": "https://github.com/awcodes/filament-tiptap-editor/issues",
-                "source": "https://github.com/awcodes/filament-tiptap-editor/tree/2.x"
+                "source": "https://github.com/awcodes/filament-tiptap-editor/tree/v2.6.5"
             },
             "funding": [
                 {
@@ -3232,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pboivin/filament-peek.git",
-                "reference": "7990b687ea6ab24e1bf7be9ac792e15643f799ce"
+                "reference": "c3e17ddcd02b1a109613bd549ada66fcdf36027c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/7990b687ea6ab24e1bf7be9ac792e15643f799ce",
-                "reference": "7990b687ea6ab24e1bf7be9ac792e15643f799ce",
+                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/c3e17ddcd02b1a109613bd549ada66fcdf36027c",
+                "reference": "c3e17ddcd02b1a109613bd549ada66fcdf36027c",
                 "shasum": ""
             },
             "require": {
@@ -3301,7 +3300,7 @@
                 "issues": "https://github.com/pboivin/filament-peek/issues",
                 "source": "https://github.com/pboivin/filament-peek/tree/1.x"
             },
-            "time": "2023-07-09T15:11:44+00:00"
+            "time": "2023-07-09T17:47:31+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -9954,7 +9953,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "awcodes/filament-tiptap-editor": 20,
         "pboivin/filament-peek": 20
     },
     "prefer-stable": true,
