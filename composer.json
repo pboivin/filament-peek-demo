@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "awcodes/filament-tiptap-editor": "^2.6",
+        "awcodes/filament-tiptap-editor": "2.x-dev",
         "filament/filament": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
@@ -67,15 +67,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": {
-        "peek": {
-            "type": "path",
-            "url": "/home/pboivin/Workspace/projects/filament-peek/dev/filament-peek"
-        },
-        "tiptap": {
-            "type": "path",
-            "url": "/home/pboivin/Workspace/contrib/filament-tiptap-editor"
-        }
-    }
+    "prefer-stable": true
 }

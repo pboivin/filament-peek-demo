@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f199a16f733601f6b75ad0f37919f06f",
+    "content-hash": "b4525cce23d7610b86867aa5934563e0",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -78,10 +78,16 @@
         {
             "name": "awcodes/filament-tiptap-editor",
             "version": "2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/awcodes/filament-tiptap-editor.git",
+                "reference": "13127542c29ff203c32c0a72d01f5b4638563ab2"
+            },
             "dist": {
-                "type": "path",
-                "url": "/home/pboivin/Workspace/contrib/filament-tiptap-editor",
-                "reference": "de582f7abc0309b69b462a52cb77f94cd63d870d"
+                "type": "zip",
+                "url": "https://api.github.com/repos/awcodes/filament-tiptap-editor/zipball/13127542c29ff203c32c0a72d01f5b4638563ab2",
+                "reference": "13127542c29ff203c32c0a72d01f5b4638563ab2",
+                "shasum": ""
             },
             "require": {
                 "filament/filament": "^2.0",
@@ -102,6 +108,7 @@
                 "phpunit/phpunit": "^9.5|^10.0",
                 "spatie/laravel-ray": "^1.26"
             },
+            "default-branch": true,
             "type": "package",
             "extra": {
                 "laravel": {
@@ -118,11 +125,7 @@
                     "FilamentTiptapEditor\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "FilamentTiptapEditor\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -140,9 +143,17 @@
                 "laravel",
                 "tiptap"
             ],
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/awcodes/filament-tiptap-editor/issues",
+                "source": "https://github.com/awcodes/filament-tiptap-editor/tree/2.x"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/awcodes",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-07-09T05:10:37+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -3218,10 +3229,16 @@
         {
             "name": "pboivin/filament-peek",
             "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pboivin/filament-peek.git",
+                "reference": "cd3eba0386caa3c263a47f5da0da932544ee5dc4"
+            },
             "dist": {
-                "type": "path",
-                "url": "/home/pboivin/Workspace/projects/filament-peek/dev/filament-peek",
-                "reference": "1ae0966c042d8807046bc06fcd17c477e08d7725"
+                "type": "zip",
+                "url": "https://api.github.com/repos/pboivin/filament-peek/zipball/cd3eba0386caa3c263a47f5da0da932544ee5dc4",
+                "reference": "cd3eba0386caa3c263a47f5da0da932544ee5dc4",
+                "shasum": ""
             },
             "require": {
                 "filament/filament": "^2.0",
@@ -3259,27 +3276,7 @@
                     "Pboivin\\FilamentPeek\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Pboivin\\FilamentPeek\\Tests\\": "tests/src",
-                    "Pboivin\\FilamentPeek\\Tests\\Database\\Factories\\": "tests/database/factories"
-                }
-            },
-            "scripts": {
-                "pint": [
-                    "vendor/bin/pint"
-                ],
-                "test:pest": [
-                    "vendor/bin/pest --parallel"
-                ],
-                "test:phpstan": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test": [
-                    "@test:pest",
-                    "@test:phpstan"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3300,9 +3297,11 @@
                 "preview",
                 "previewer"
             ],
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/pboivin/filament-peek/issues",
+                "source": "https://github.com/pboivin/filament-peek/tree/1.x"
+            },
+            "time": "2023-07-09T03:53:37+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -9955,6 +9954,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "awcodes/filament-tiptap-editor": 20,
         "pboivin/filament-peek": 20
     },
     "prefer-stable": true,
