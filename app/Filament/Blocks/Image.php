@@ -15,11 +15,11 @@ class Image
     ): Block {
         return Block::make($name)
             ->schema([
-                TextInput::make('url')
-                    ->label('Image URL'),
-
                 FileUpload::make('image')
                     ->label('Image upload'),
+
+                TextInput::make('url')
+                    ->label('or Image URL'),
 
                 Select::make('ratio')
                     ->options(static::getRatios())
