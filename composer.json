@@ -13,7 +13,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.11",
-        "pboivin/filament-peek": "1.0.0-beta1"
+        "pboivin/filament-peek": "1.x-dev"
     },
     "require-dev": {
         "doctrine/dbal": "^3.5",
