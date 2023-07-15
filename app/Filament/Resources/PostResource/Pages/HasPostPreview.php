@@ -17,7 +17,7 @@ trait HasPostPreview
     protected function getActions(): array
     {
         return [
-            PreviewAction::make()->label('Preview Post'),
+            PreviewAction::make()->label('Preview Changes'),
         ];
     }
 

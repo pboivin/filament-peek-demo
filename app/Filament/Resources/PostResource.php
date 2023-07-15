@@ -54,25 +54,29 @@ class PostResource extends Resource
                     ->required(),
             ]),
 
-            PreviewLink::make()
-                ->label('Preview Content')
-                ->builderPreview('content_blocks')
-                ->columnSpanFull()
-                ->alignRight(),
+            Forms\Components\Section::make('Post Content')->schema([
+                PreviewLink::make()
+                    ->label('Open Content Editor')
+                    ->builderPreview('content_blocks')
+                    ->columnSpanFull()
+                    ->alignRight(),
 
-            PostContent::make('content_blocks')
-                ->label('Content')
-                ->columnSpanFull(),
+                PostContent::make('content_blocks')
+                    ->label('Blocks')
+                    ->columnSpanFull(),
+            ])->collapsible(),
 
-            PreviewLink::make()
-                ->label('Preview Footer')
-                ->builderPreview('footer_blocks')
-                ->columnSpanFull()
-                ->alignRight(),
+            Forms\Components\Section::make('Post Footer')->schema([
+                PreviewLink::make()
+                    ->label('Open Footer Editor')
+                    ->builderPreview('footer_blocks')
+                    ->columnSpanFull()
+                    ->alignRight(),
 
-            PostFooter::make('footer_blocks')
-                ->label('Footer')
-                ->columnSpanFull(),
+                PostFooter::make('footer_blocks')
+                    ->label('Blocks')
+                    ->columnSpanFull(),
+            ])->collapsible(),
 
             Forms\Components\TextInput::make('main_image_url')
                 ->label('Main image URL')
@@ -102,7 +106,14 @@ class PostResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
+                    Tables\Actions\Action::make('view_post')
+                        ->label('View')
+                        ->icon('heroicon-s-eye')
+                        ->url(fn ($record) => route('post.show', ['slug' => $record->slug]))
+                        ->openUrlInNewTab(),
+
                     Tables\Actions\EditAction::make(),
+
                     Tables\Actions\DeleteAction::make(),
                 ]),
             ])
