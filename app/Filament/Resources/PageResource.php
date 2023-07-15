@@ -43,7 +43,7 @@ class PageResource extends Resource
             ]),
 
             PreviewLink::make()
-                ->label('Preview Content')
+                ->label('Open Content Editor')
                 ->builderPreview('content')
                 ->columnSpanFull()
                 ->alignRight(),
@@ -63,7 +63,14 @@ class PageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
+                    Tables\Actions\Action::make('view_page')
+                        ->label('View')
+                        ->icon('heroicon-s-eye')
+                        ->url(fn ($record) => route('page.show', ['slug' => $record->slug]))
+                        ->openUrlInNewTab(),
+
                     Tables\Actions\EditAction::make(),
+
                     Tables\Actions\DeleteAction::make(),
                 ]),
             ])

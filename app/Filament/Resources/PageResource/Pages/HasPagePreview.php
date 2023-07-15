@@ -16,7 +16,7 @@ trait HasPagePreview
     protected function getActions(): array
     {
         return [
-            PreviewAction::make()->label('Preview Page'),
+            PreviewAction::make()->label('Preview Changes'),
         ];
     }
 
