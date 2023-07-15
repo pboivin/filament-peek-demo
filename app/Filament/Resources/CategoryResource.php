@@ -24,12 +24,15 @@ class CategoryResource extends Resource
     {
         return $form->schema([
             Forms\Components\TextInput::make('name')
-                ->required(),
+                ->required()
+                ->lazy()
+                ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
 
             Forms\Components\TextInput::make('slug')
                 ->required()
+                ->lazy()
                 ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
-        ]);
+    ]);
     }
 
     public static function table(Table $table): Table
