@@ -3,7 +3,7 @@
         <div class="text-4xl text-white">
             <h1>
                 {{ $post->title }}
-                @isset($isPeekPreviewModal) [Preview] @endisset
+                {{-- @isset($isPeekPreviewModal) [Preview] @endisset --}}
             </h1>
         </div>
     </x-banner>
