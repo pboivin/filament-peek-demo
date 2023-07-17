@@ -12,6 +12,12 @@ This is a demo project showcasing the [Peek](https://github.com/pboivin/filament
 
 ![Screenshots of the edit page and builder field preview](./art/02-builder-preview.jpg)
 
+---
+
+**[Tiptap Editor](https://github.com/awcodes/filament-tiptap-editor) Integration**
+
+![Screenshots of the edit page and the Tiptap Editor form field](./art/03-tiptap.jpg)
+
 ## Initial setup
 
 ```sh
