@@ -26,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Filament::registerScripts([
+            asset('js/admin.js'),
+        ]);
+
         Filament::serving(function () {
             Filament::registerNavigationGroups([
                 NavigationGroup::make()->label('Site'),
