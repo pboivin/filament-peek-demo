@@ -42,11 +42,11 @@ class PageResource extends Resource
                     ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
             ]),
 
-            // PreviewLink::make()
-            //     ->label('Open Content Editor')
-            //     ->builderPreview('content')
-            //     ->columnSpanFull()
-            //     ->alignRight(),
+            PreviewLink::make()
+                ->label('Open Content Editor')
+                ->builderPreview('content')
+                ->columnSpanFull()
+                ->alignRight(),
 
             PageContent::make('content')
                 ->required(),
