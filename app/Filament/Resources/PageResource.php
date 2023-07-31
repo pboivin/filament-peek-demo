@@ -6,10 +6,10 @@ use App\Filament\Fields\PageContent;
 use App\Filament\Resources\PageResource\Pages;
 use App\Models\Page;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Pboivin\FilamentPeek\Forms\Components\PreviewLink;
 
@@ -42,11 +42,11 @@ class PageResource extends Resource
                     ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
             ]),
 
-            PreviewLink::make()
-                ->label('Open Content Editor')
-                ->builderPreview('content')
-                ->columnSpanFull()
-                ->alignRight(),
+            // PreviewLink::make()
+            //     ->label('Open Content Editor')
+            //     ->builderPreview('content')
+            //     ->columnSpanFull()
+            //     ->alignRight(),
 
             PageContent::make('content')
                 ->required(),

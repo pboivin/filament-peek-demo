@@ -7,10 +7,10 @@ use App\Filament\Fields\PostFooter;
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Pboivin\FilamentPeek\Forms\Components\PreviewLink;
 
@@ -55,11 +55,11 @@ class PostResource extends Resource
             ]),
 
             Forms\Components\Section::make('Post Content')->schema([
-                PreviewLink::make()
-                    ->label('Open Content Editor')
-                    ->builderPreview('content_blocks')
-                    ->columnSpanFull()
-                    ->alignRight(),
+                // PreviewLink::make()
+                //     ->label('Open Content Editor')
+                //     ->builderPreview('content_blocks')
+                //     ->columnSpanFull()
+                //     ->alignRight(),
 
                 PostContent::make('content_blocks')
                     ->label('Blocks')
@@ -67,11 +67,11 @@ class PostResource extends Resource
             ])->collapsible(),
 
             Forms\Components\Section::make('Post Footer')->schema([
-                PreviewLink::make()
-                    ->label('Open Footer Editor')
-                    ->builderPreview('footer_blocks')
-                    ->columnSpanFull()
-                    ->alignRight(),
+                // PreviewLink::make()
+                //     ->label('Open Footer Editor')
+                //     ->builderPreview('footer_blocks')
+                //     ->columnSpanFull()
+                //     ->alignRight(),
 
                 PostFooter::make('footer_blocks')
                     ->label('Blocks')

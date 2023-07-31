@@ -10,13 +10,13 @@ use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
 
 trait HasPagePreview
 {
-    use HasPreviewModal;
-    use HasBuilderPreview;
+    // use HasPreviewModal;
+    // use HasBuilderPreview;
 
     protected function getActions(): array
     {
         return [
-            PreviewAction::make()->label('Preview Changes'),
+            // PreviewAction::make()->label('Preview Changes'),
         ];
     }
 
