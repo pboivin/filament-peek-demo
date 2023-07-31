@@ -55,11 +55,11 @@ class PostResource extends Resource
             ]),
 
             Forms\Components\Section::make('Post Content')->schema([
-                // PreviewLink::make()
-                //     ->label('Open Content Editor')
-                //     ->builderPreview('content_blocks')
-                //     ->columnSpanFull()
-                //     ->alignRight(),
+                PreviewLink::make()
+                    ->label('Open Content Editor')
+                    ->builderPreview('content_blocks')
+                    ->columnSpanFull()
+                    ->alignRight(),
 
                 PostContent::make('content_blocks')
                     ->label('Blocks')
@@ -67,11 +67,11 @@ class PostResource extends Resource
             ])->collapsible(),
 
             Forms\Components\Section::make('Post Footer')->schema([
-                // PreviewLink::make()
-                //     ->label('Open Footer Editor')
-                //     ->builderPreview('footer_blocks')
-                //     ->columnSpanFull()
-                //     ->alignRight(),
+                PreviewLink::make()
+                    ->label('Open Footer Editor')
+                    ->builderPreview('footer_blocks')
+                    ->columnSpanFull()
+                    ->alignRight(),
 
                 PostFooter::make('footer_blocks')
                     ->label('Blocks')
