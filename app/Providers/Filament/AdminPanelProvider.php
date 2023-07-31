@@ -56,3 +56,19 @@ class AdminPanelProvider extends PanelProvider
             ]);
     }
 }
+
+/*
+
+Filament::registerScripts([
+    asset('js/admin.js'),
+]);
+
+Filament::serving(function () {
+    Filament::registerNavigationGroups([
+        NavigationGroup::make()->label('Site'),
+        NavigationGroup::make()->label('Contact'),
+    ]);
+});
+
+*/
+
