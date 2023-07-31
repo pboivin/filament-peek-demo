@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d001a483e99dbddd03f0bd2787bc32eb",
+    "content-hash": "076a338edb28e1dd6ecaad40d10ded58",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -1307,12 +1307,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
-                "reference": "e315e3a23040b200b6fb1bdbaa3f74012eb1fc13"
+                "reference": "780ba4a5021bfd7a8bb6a02a630f74c09719b512"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/support/zipball/e315e3a23040b200b6fb1bdbaa3f74012eb1fc13",
-                "reference": "e315e3a23040b200b6fb1bdbaa3f74012eb1fc13",
+                "url": "https://api.github.com/repos/filamentphp/support/zipball/780ba4a5021bfd7a8bb6a02a630f74c09719b512",
+                "reference": "780ba4a5021bfd7a8bb6a02a630f74c09719b512",
                 "shasum": ""
             },
             "require": {
@@ -1356,7 +1356,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-07-31T21:14:50+00:00"
+            "time": "2023-07-31T21:29:23+00:00"
         },
         {
             "name": "filament/tables",
@@ -3019,16 +3019,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.0.0-beta.5",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "249b52628d4285f2b1073eeedc3312b265774705"
+                "reference": "e3a1a5a70aa037276b98e8d69f19ff194240cb89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/249b52628d4285f2b1073eeedc3312b265774705",
-                "reference": "249b52628d4285f2b1073eeedc3312b265774705",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/e3a1a5a70aa037276b98e8d69f19ff194240cb89",
+                "reference": "e3a1a5a70aa037276b98e8d69f19ff194240cb89",
                 "shasum": ""
             },
             "require": {
@@ -3048,6 +3048,7 @@
                 "phpunit/phpunit": "^9.0",
                 "psy/psysh": "@stable"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3080,7 +3081,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.0.0-beta.5"
+                "source": "https://github.com/livewire/livewire/tree/main"
             },
             "funding": [
                 {
@@ -3088,7 +3089,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-28T21:10:07+00:00"
+            "time": "2023-07-29T19:31:09+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -9798,10 +9799,18 @@
             "time": "2021-07-28T10:34:58+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "livewire/livewire",
+            "version": "dev-main",
+            "alias": "3.0",
+            "alias_normalized": "3.0.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "filament/filament": 20,
+        "livewire/livewire": 20,
         "pboivin/filament-peek": 20
     },
     "prefer-stable": true,
