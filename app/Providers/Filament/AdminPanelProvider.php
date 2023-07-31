@@ -2,13 +2,18 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Facades\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
 use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentAsset;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -55,20 +60,22 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
+
+    public function register()
+    {
+        parent::register();
+
+        $this->app->resolving('filament', function () {
+            FilamentAsset::register([
+                Css::make('admin-stylesheet', resource_path('css/admin.css')),
+                Js::make('admin-script', resource_path('js/admin.js')),
+            ]);
+
+            Filament::registerNavigationGroups([
+                NavigationGroup::make()->label('Blog'),
+                NavigationGroup::make()->label('Site'),
+                NavigationGroup::make()->label('Contact'),
+            ]);
+        });
+    }
 }
-
-/*
-
-Filament::registerScripts([
-    asset('js/admin.js'),
-]);
-
-Filament::serving(function () {
-    Filament::registerNavigationGroups([
-        NavigationGroup::make()->label('Site'),
-        NavigationGroup::make()->label('Contact'),
-    ]);
-});
-
-*/
-
