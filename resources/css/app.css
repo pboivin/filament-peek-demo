@@ -1,0 +1,33 @@
+@tailwind base;
+
+:root {
+    --main-nav-height: 4rem;
+}
+
+a, .prose a {
+    @apply text-green-800 no-underline font-medium;
+}
+
+.prose img {
+    @apply bg-gray-200;
+}
+
+@tailwind components;
+
+.main-nav {
+    height: var(--main-nav-height);
+}
+
+.main-nav a {
+    @apply text-inherit font-normal;
+}
+
+.site-intro {
+    height: calc(100vh - var(--main-nav-height));
+}
+
+.site-intro > * {
+    margin-top: calc(-1 * var(--main-nav-height));
+}
+
+@tailwind utilities;
