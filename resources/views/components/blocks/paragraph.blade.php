@@ -1,3 +1,0 @@
-@props(['text'])
-
-{!! $text !!}
