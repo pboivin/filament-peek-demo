@@ -2,15 +2,16 @@
 
 namespace App\Filament\Fields;
 
-use FilamentTiptapEditor\TiptapEditor;
+use Filament\Forms\Components\RichEditor;
 
 class PageContent
 {
     public static function make(
         string $name,
         string $context = 'form',
-    ): TiptapEditor {
-        return TiptapEditor::make($name)
-            ->columnSpanFull();
+    ): RichEditor {
+        // return TiptapEditor::make($name)->columnSpanFull();
+
+        return RichEditor::make($name)->columnSpanFull();
     }
 }

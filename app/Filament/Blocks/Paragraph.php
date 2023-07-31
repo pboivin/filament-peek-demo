@@ -3,7 +3,7 @@
 namespace App\Filament\Blocks;
 
 use Filament\Forms\Components\Builder\Block;
-use FilamentTiptapEditor\TiptapEditor;
+use Filament\Forms\Components\RichEditor;
 
 class Paragraph
 {
@@ -13,8 +13,9 @@ class Paragraph
     ): Block {
         return Block::make($name)
             ->schema([
-                TiptapEditor::make('text')
-                    ->profile('barebone'),
+                // TiptapEditor::make('text')->profile('barebone'),
+
+                RichEditor::make('text'),
             ]);
     }
 }
