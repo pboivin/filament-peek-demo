@@ -10,7 +10,7 @@
     <x-container>
         @if ($postChunks->isNotEmpty())
             <div class="mt-8 flex flex-col gap-4 lg:items-center lg:flex-row">
-                <x-select name="category" wire:model="category">
+                <x-select name="category" wire:model.live="category">
                     <option value="">All categories</option>
                     @foreach ($categories as $category)
                         <option
@@ -20,7 +20,7 @@
                     @endforeach
                 </x-select>
 
-                <x-select name="order" wire:model="order">
+                <x-select name="order" wire:model.live="order">
                     <option value="date_desc">Show most recent</option>
                     <option value="date_asc">Show least recent</option>
                 </x-select>
