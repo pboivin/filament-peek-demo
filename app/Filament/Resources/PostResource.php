@@ -11,6 +11,8 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Support\Str;
 use Pboivin\FilamentPeek\Forms\Components\PreviewLink;
 
@@ -96,6 +98,10 @@ class PostResource extends Resource
                     ->sortable()
                     ->searchable(),
 
+                Tables\Columns\TextColumn::make('category.name')
+                    ->sortable()
+                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('published_at')
                     ->dateTime()
                     ->sortable(),
@@ -117,9 +123,14 @@ class PostResource extends Resource
                     Tables\Actions\DeleteAction::make(),
                 ]),
             ])
-            ->defaultSort('published_at', 'desc')
-            ->filters([])
-            ->bulkActions([]);
+            ->bulkActions([])
+            ->filters([
+                SelectFilter::make('category')
+                    ->relationship('category', 'name'),
+
+                TernaryFilter::make('is_featured'),
+            ])
+            ->defaultSort('published_at', 'desc');
     }
 
     public static function getPages(): array
