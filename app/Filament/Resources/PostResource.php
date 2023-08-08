@@ -118,7 +118,12 @@ class PostResource extends Resource
                 ]),
             ])
             ->defaultSort('published_at', 'desc')
-            ->filters([])
+            ->filters([
+                Tables\Filters\SelectFilter::make('category')
+                    ->relationship('category', 'name'),
+
+                Tables\Filters\SelectFilter::make('is_featured'),
+            ])
             ->bulkActions([]);
     }
 
