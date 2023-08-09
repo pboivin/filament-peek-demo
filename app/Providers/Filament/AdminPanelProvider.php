@@ -62,10 +62,15 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentPeekPlugin::make()
+            ])
+            ->navigationGroups([
+                NavigationGroup::make()->label('Blog'),
+                NavigationGroup::make()->label('Site'),
+                NavigationGroup::make()->label('Contact'),
             ]);
     }
 
-    public function register()
+    public function register(): void
     {
         parent::register();
 
@@ -73,12 +78,6 @@ class AdminPanelProvider extends PanelProvider
             FilamentAsset::register([
                 Css::make('admin-stylesheet', resource_path('css/admin.css')),
                 Js::make('admin-script', resource_path('js/admin.js')),
-            ]);
-
-            Filament::registerNavigationGroups([
-                NavigationGroup::make()->label('Blog'),
-                NavigationGroup::make()->label('Site'),
-                NavigationGroup::make()->label('Contact'),
             ]);
         });
     }
