@@ -100,6 +100,10 @@ class PostResource extends Resource
                     ->sortable()
                     ->searchable(),
 
+                Tables\Columns\TextColumn::make('category.name')
+                    ->sortable()
+                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('published_at')
                     ->dateTime()
                     ->sortable(),
@@ -126,7 +130,7 @@ class PostResource extends Resource
                 Tables\Filters\SelectFilter::make('category')
                     ->relationship('category', 'name'),
 
-                Tables\Filters\SelectFilter::make('is_featured'),
+                Tables\Filters\TernaryFilter::make('is_featured'),
             ])
             ->bulkActions([]);
     }
