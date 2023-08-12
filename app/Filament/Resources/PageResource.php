@@ -11,7 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
-use Pboivin\FilamentPeek\Forms\Components\PreviewLink;
+use Pboivin\FilamentPeek\Forms\Actions\InlinePreviewAction;
 
 class PageResource extends Resource
 {
@@ -42,11 +42,13 @@ class PageResource extends Resource
                     ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
             ]),
 
-            PreviewLink::make()
-                ->label('Open Content Editor')
-                ->builderPreview('content')
+            Forms\Components\Actions::make([
+                InlinePreviewAction::make()
+                    ->label('Open Content Editor')
+                    ->builderPreview('content')
+            ])
                 ->columnSpanFull()
-                ->alignRight(),
+                ->alignEnd(),
 
             PageContent::make('content')
                 ->required(),
