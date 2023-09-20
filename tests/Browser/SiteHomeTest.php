@@ -6,16 +6,16 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class LoginTest extends DuskTestCase
+class SiteHomeTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     */
-    public function testExample(): void
+    use DatabaseMigrations;
+
+    public function test_can_visit_home_page(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->assertSee('Laravel');
+            $browser
+                ->visit('/')
+                ->assertSee('ACME');
         });
     }
 }
