@@ -4,11 +4,12 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ContactEntryResource\Pages;
 use App\Models\ContactEntry;
-use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Infolists;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\HtmlString;
 
 class ContactEntryResource extends Resource
 {
@@ -18,21 +19,23 @@ class ContactEntryResource extends Resource
 
     protected static ?string $navigationGroup = 'Contact';
 
-    public static function form(Form $form): Form
+    public static function infolist(Infolist $infolist): Infolist
     {
-        return $form
-            ->schema([
-                Forms\Components\DateTimePicker::make('created_at')
-                    ->label('Date')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('name')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('email')
-                    ->columnSpanFull()
-                    ->email(),
-                Forms\Components\Textarea::make('message')
-                    ->columnSpanFull(),
-            ]);
+        return $infolist->schema([
+            Infolists\Components\TextEntry::make('created_at')
+                ->label('Date')
+                ->columnSpanFull(),
+
+            Infolists\Components\TextEntry::make('name')
+                ->columnSpanFull(),
+
+            Infolists\Components\TextEntry::make('email')
+                ->columnSpanFull(),
+
+            Infolists\Components\TextEntry::make('message')
+                ->formatStateUsing(fn ($state) => new HtmlString(nl2br($state)))
+                ->columnSpanFull(),
+        ]);
     }
 
     public static function table(Table $table): Table
@@ -46,24 +49,14 @@ class ContactEntryResource extends Resource
                 Tables\Columns\TextColumn::make('name')->sortable(),
                 Tables\Columns\TextColumn::make('email')->sortable(),
             ])
-            ->defaultSort('created_at', 'desc')
-            ->filters([
-                //
-            ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
-            ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getPages(): array
