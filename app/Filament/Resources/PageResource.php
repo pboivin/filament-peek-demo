@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Pboivin\FilamentPeek\Forms\Actions\InlinePreviewAction;
+use Pboivin\FilamentPeek\Tables\Actions\ListPreviewAction;
 
 class PageResource extends Resource
 {
@@ -65,14 +66,8 @@ class PageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
-                    Tables\Actions\Action::make('view_page')
-                        ->label('View')
-                        ->icon('heroicon-s-eye')
-                        ->url(fn ($record) => route('page.show', ['slug' => $record->slug]))
-                        ->openUrlInNewTab(),
-
+                    ListPreviewAction::make(),
                     Tables\Actions\EditAction::make(),
-
                     Tables\Actions\DeleteAction::make(),
                 ]),
             ])
