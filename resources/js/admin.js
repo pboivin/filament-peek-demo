@@ -1,9 +1,7 @@
-/*
 document.addEventListener('peek:modal-opening', (e) => {
-    console.log('The modal is opening...');
+    console.log('Preview modal opening...');
 });
 
 document.addEventListener('peek:modal-closing', (e) => {
-    console.log('The modal is closing...');
+    console.log('Preview modal closing...');
 });
-*/
