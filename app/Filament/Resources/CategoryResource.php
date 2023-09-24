@@ -32,7 +32,7 @@ class CategoryResource extends Resource
                 ->required()
                 ->lazy()
                 ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
-    ]);
+        ]);
     }
 
     public static function table(Table $table): Table

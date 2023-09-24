@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\ContactEntryResource\Pages;
 
 use App\Filament\Resources\ContactEntryResource;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListContactEntries extends ListRecords
@@ -12,8 +11,6 @@ class ListContactEntries extends ListRecords
 
     protected function getActions(): array
     {
-        return [
-            Actions\CreateAction::make(),
-        ];
+        return [];
     }
 }

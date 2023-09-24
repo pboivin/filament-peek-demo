@@ -13,8 +13,6 @@ class Paragraph
     ): Block {
         return Block::make($name)
             ->schema([
-                // TiptapEditor::make('text')->profile('barebone'),
-
                 RichEditor::make('text'),
             ]);
     }

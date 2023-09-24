@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\ContactEntryResource\Pages;
 
 use App\Filament\Resources\ContactEntryResource;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\ViewRecord;
 
 class ViewContactEntry extends ViewRecord
@@ -12,8 +11,6 @@ class ViewContactEntry extends ViewRecord
 
     protected function getActions(): array
     {
-        return [
-            Actions\EditAction::make(),
-        ];
+        return [];
     }
 }
