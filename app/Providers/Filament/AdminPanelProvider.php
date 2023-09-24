@@ -77,7 +77,6 @@ class AdminPanelProvider extends PanelProvider
 
         $this->app->resolving('filament', function () {
             FilamentAsset::register([
-                Css::make('admin-stylesheet', resource_path('css/admin.css')),
                 Js::make('admin-script', resource_path('js/admin.js')),
             ]);
         });
