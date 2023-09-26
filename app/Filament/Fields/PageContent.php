@@ -2,14 +2,14 @@
 
 namespace App\Filament\Fields;
 
-use FilamentTiptapEditor\TiptapEditor;
+use Filament\Forms\Components\MarkdownEditor;
 
 class PageContent
 {
     public static function make(
         string $name,
         string $context = 'form',
-    ): TiptapEditor {
-        return TiptapEditor::make($name)->columnSpanFull();
+    ): MarkdownEditor {
+        return MarkdownEditor::make($name)->columnSpanFull();
     }
 }
