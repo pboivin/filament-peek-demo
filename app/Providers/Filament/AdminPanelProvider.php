@@ -63,6 +63,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentPeekPlugin::make()
+                    ->disablePluginStyles()
             ])
             ->navigationGroups([
                 NavigationGroup::make()->label('Blog'),
