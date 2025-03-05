@@ -2,7 +2,7 @@
 
 namespace App\Providers\Filament;
 
-use Filament\Facades\Filament;
+use Awcodes\FilamentStickyHeader\StickyHeaderPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -10,7 +10,6 @@ use Filament\Navigation\NavigationGroup;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentAsset;
@@ -62,8 +61,8 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
-                FilamentPeekPlugin::make()
-                    ->disablePluginStyles()
+                StickyHeaderPlugin::make()->floating(),
+                FilamentPeekPlugin::make()->disablePluginStyles(),
             ])
             ->navigationGroups([
                 NavigationGroup::make()->label('Blog'),
