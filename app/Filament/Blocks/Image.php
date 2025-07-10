@@ -23,7 +23,7 @@ class Image
 
                 Select::make('ratio')
                     ->options(static::getRatios())
-                    ->afterStateHydrated(fn ($state, $set) => $state || $set('ratio', '4-3')),
+                    ->afterStateHydrated(fn($state, $set) => $state || $set('ratio', '4-3')),
 
                 TextInput::make('alt')
                     ->columnSpanFull(),

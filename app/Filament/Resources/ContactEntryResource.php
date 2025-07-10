@@ -25,21 +25,22 @@ class ContactEntryResource extends Resource
 
     public static function infolist(Schema $schema): Schema
     {
-        return $schema->components([
-            TextEntry::make('created_at')
-                ->label('Date')
-                ->columnSpanFull(),
+        return $schema
+            ->components([
+                TextEntry::make('created_at')
+                    ->label('Date')
+                    ->columnSpanFull(),
 
-            TextEntry::make('name')
-                ->columnSpanFull(),
+                TextEntry::make('name')
+                    ->columnSpanFull(),
 
-            TextEntry::make('email')
-                ->columnSpanFull(),
+                TextEntry::make('email')
+                    ->columnSpanFull(),
 
-            TextEntry::make('message')
-                ->formatStateUsing(fn ($state) => new HtmlString(nl2br($state)))
-                ->columnSpanFull(),
-        ]);
+                TextEntry::make('message')
+                    ->formatStateUsing(fn($state) => new HtmlString(nl2br($state)))
+                    ->columnSpanFull(),
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -50,8 +51,10 @@ class ContactEntryResource extends Resource
                     ->label('Date')
                     ->dateTime()
                     ->sortable(),
-                TextColumn::make('name')->sortable(),
-                TextColumn::make('email')->sortable(),
+                TextColumn::make('name')
+                    ->sortable(),
+                TextColumn::make('email')
+                    ->sortable(),
             ])
             ->recordActions([
                 ViewAction::make(),
@@ -68,8 +71,6 @@ class ContactEntryResource extends Resource
         return [
             'index' => ListContactEntries::route('/'),
             'view' => ViewContactEntry::route('/{record}'),
-            // 'create' => Pages\CreateContactEntry::route('/create'),
-            // 'edit' => Pages\EditContactEntry::route('/{record}/edit'),
         ];
     }
 }

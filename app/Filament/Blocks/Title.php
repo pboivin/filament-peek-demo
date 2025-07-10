@@ -23,7 +23,7 @@ class Title
                         'h3' => 'h3',
                         'h4' => 'h4',
                     ])
-                    ->afterStateHydrated(fn ($state, $set) => $state || $set('level', 'h2')),
+                    ->afterStateHydrated(fn($state, $set) => $state || $set('level', 'h2')),
             ])
             ->columns($context === 'form' ? 2 : 1);
     }

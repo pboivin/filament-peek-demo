@@ -25,17 +25,18 @@ class CategoryResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
-            TextInput::make('name')
-                ->required()
-                ->lazy()
-                ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
+        return $schema
+            ->components([
+                TextInput::make('name')
+                    ->required()
+                    ->lazy()
+                    ->afterStateUpdated(fn($set, $state) => $set('slug', Str::slug($state))),
 
-            TextInput::make('slug')
-                ->required()
-                ->lazy()
-                ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
-        ]);
+                TextInput::make('slug')
+                    ->required()
+                    ->lazy()
+                    ->afterStateUpdated(fn($set, $state) => $set('slug', Str::slug($state))),
+            ]);
     }
 
     public static function table(Table $table): Table

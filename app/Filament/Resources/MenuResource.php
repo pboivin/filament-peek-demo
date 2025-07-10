@@ -31,15 +31,16 @@ class MenuResource extends Resource
         return $schema->components([
             Repeater::make('items')
                 ->schema([
-                    Grid::make(2)->schema([
-                        TextInput::make('title')
-                            ->required()
-                            ->columnSpan(1),
+                    Grid::make(2)
+                        ->schema([
+                            TextInput::make('title')
+                                ->required()
+                                ->columnSpan(1),
 
-                        TextInput::make('url')
-                            ->required()
-                            ->columnSpan(1),
-                    ]),
+                            TextInput::make('url')
+                                ->required()
+                                ->columnSpan(1),
+                        ]),
 
                     Radio::make('type')
                         ->options([
@@ -81,7 +82,6 @@ class MenuResource extends Resource
         return [
             'index' => ListMenus::route('/'),
             'edit' => EditMenu::route('/{record}/edit'),
-            // 'create' => Pages\CreateMenu::route('/create'),
         ];
     }
 }

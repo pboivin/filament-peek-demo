@@ -31,36 +31,40 @@ class PageResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
-            Grid::make()->columns(2)->schema([
-                TextInput::make('title')
-                    ->columnSpan(1)
-                    ->required()
-                    ->lazy()
-                    ->afterStateUpdated(function ($set, $get, $state) {
-                        if ($get('slug')) {
-                            return;
-                        }
-                        $set('slug', Str::slug($state));
-                    }),
+        return $schema
+            ->columns(1)
+            ->components([
+                Grid::make()
+                    ->columns(2)
+                    ->schema([
+                        TextInput::make('title')
+                            ->columnSpan(1)
+                            ->required()
+                            ->lazy()
+                            ->afterStateUpdated(function ($set, $get, $state) {
+                                if ($get('slug')) {
+                                    return;
+                                }
+                                $set('slug', Str::slug($state));
+                            }),
 
-                TextInput::make('slug')
-                    ->required()
-                    ->columnSpan(1)
-                    ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
-            ]),
+                        TextInput::make('slug')
+                            ->required()
+                            ->columnSpan(1)
+                            ->afterStateUpdated(fn($set, $state) => $set('slug', Str::slug($state))),
+                    ]),
 
-            Actions::make([
-                // InlinePreviewAction::make()
-                //     ->label('Open Content Editor')
-                //     ->builderName('content')
-            ])
-                ->columnSpanFull()
-                ->alignEnd(),
+                Actions::make([
+                    // InlinePreviewAction::make()
+                    //     ->label('Open Content Editor')
+                    //     ->builderName('content')
+                ])
+                    ->columnSpanFull()
+                    ->alignEnd(),
 
-            PageContent::make('content')
-                ->required(),
-        ]);
+                PageContent::make('content')
+                    ->required(),
+            ]);
     }
 
     public static function table(Table $table): Table

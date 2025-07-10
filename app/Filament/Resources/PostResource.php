@@ -40,72 +40,78 @@ class PostResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
-            Grid::make()->columns(2)->schema([
-                TextInput::make('title')
-                    ->columnSpan(1)
-                    ->required()
-                    ->lazy()
-                    ->afterStateUpdated(function ($set, $get, $state) {
-                        if ($get('slug')) {
-                            return;
-                        }
-                        $set('slug', Str::slug($state));
-                    }),
+        return $schema
+            ->columns(1)
+            ->components([
+                Grid::make()
+                    ->columns(2)
+                    ->schema([
+                        TextInput::make('title')
+                            ->columnSpan(1)
+                            ->required()
+                            ->lazy()
+                            ->afterStateUpdated(function ($set, $get, $state) {
+                                if ($get('slug')) {
+                                    return;
+                                }
+                                $set('slug', Str::slug($state));
+                            }),
 
-                TextInput::make('slug')
-                    ->columnSpan(1)
-                    ->required(),
+                        TextInput::make('slug')
+                            ->columnSpan(1)
+                            ->required(),
 
-                DateTimePicker::make('published_at')
-                    ->columnSpan(1),
+                        DateTimePicker::make('published_at')
+                            ->columnSpan(1),
 
-                Select::make('category_id')
-                    ->relationship('category', 'name')
-                    ->columnSpan(1)
-                    ->required(),
+                        Select::make('category_id')
+                            ->relationship('category', 'name')
+                            ->columnSpan(1)
+                            ->required(),
 
-                Toggle::make('is_featured')
-                    ->columnSpanFull()
-                    ->required(),
-            ]),
+                        Toggle::make('is_featured')
+                            ->columnSpanFull()
+                            ->required(),
+                    ]),
 
-            Section::make('Post Content')->schema([
-                // Actions::make([
-                //     InlinePreviewAction::make()
-                //         ->label('Preview Content Blocks')
-                //         ->builderName('content_blocks')
-                // ])
-                //     ->columnSpanFull()
-                //     ->alignRight(),
+                Section::make('Post Content')
+                    ->schema([
+                        // Actions::make([
+                        //     InlinePreviewAction::make()
+                        //         ->label('Preview Content Blocks')
+                        //         ->builderName('content_blocks')
+                        // ])
+                        //     ->columnSpanFull()
+                        //     ->alignRight(),
 
-                PostContent::make('content_blocks')
-                    ->label('Blocks')
+                        PostContent::make('content_blocks')
+                            ->label('Blocks')
+                            ->columnSpanFull(),
+                    ])->collapsible(),
+
+                Section::make('Post Footer')
+                    ->schema([
+                        // Actions::make([
+                        //     InlinePreviewAction::make()
+                        //         ->label('Open Footer Editor')
+                        //         ->builderName('footer_blocks')
+                        // ])
+                        //     ->columnSpanFull()
+                        //     ->alignRight(),
+
+                        PostFooter::make('footer_blocks')
+                            ->label('Blocks')
+                            ->columnSpanFull(),
+                    ])->collapsible(),
+
+                TextInput::make('main_image_url')
+                    ->label('Main image URL')
                     ->columnSpanFull(),
-            ])->collapsible(),
 
-            Section::make('Post Footer')->schema([
-                // Actions::make([
-                //     InlinePreviewAction::make()
-                //         ->label('Open Footer Editor')
-                //         ->builderName('footer_blocks')
-                // ])
-                //     ->columnSpanFull()
-                //     ->alignRight(),
-
-                PostFooter::make('footer_blocks')
-                    ->label('Blocks')
+                FileUpload::make('main_image_upload')
+                    ->label('Main image upload')
                     ->columnSpanFull(),
-            ])->collapsible(),
-
-            TextInput::make('main_image_url')
-                ->label('Main image URL')
-                ->columnSpanFull(),
-
-            FileUpload::make('main_image_upload')
-                ->label('Main image upload')
-                ->columnSpanFull(),
-        ]);
+            ]);
     }
 
     public static function table(Table $table): Table
