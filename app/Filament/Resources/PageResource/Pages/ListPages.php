@@ -9,7 +9,7 @@ use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
 
 class ListPages extends ListRecords
 {
-    use HasPreviewModal;
+    // use HasPreviewModal;
 
     protected static string $resource = PageResource::class;
 

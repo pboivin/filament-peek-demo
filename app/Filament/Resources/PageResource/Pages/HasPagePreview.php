@@ -3,20 +3,20 @@
 namespace App\Filament\Resources\PageResource\Pages;
 
 use App\Filament\Fields\PageContent;
-use Filament\Forms\Components\Component;
+use Filament\Schemas\Components\Component;
 use Pboivin\FilamentPeek\Pages\Actions\PreviewAction;
 use Pboivin\FilamentPeek\Pages\Concerns\HasBuilderPreview;
 use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
 
 trait HasPagePreview
 {
-    use HasPreviewModal;
-    use HasBuilderPreview;
+    // use HasPreviewModal;
+    // use HasBuilderPreview;
 
     protected function getActions(): array
     {
         return [
-            PreviewAction::make()->label('Preview Changes'),
+            // PreviewAction::make()->label('Preview Changes'),
         ];
     }
 

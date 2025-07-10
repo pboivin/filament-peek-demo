@@ -2,40 +2,46 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\MenuResource\Pages;
+use App\Filament\Resources\MenuResource\Pages\EditMenu;
+use App\Filament\Resources\MenuResource\Pages\ListMenus;
 use App\Models\Menu;
-use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\EditAction;
+use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class MenuResource extends Resource
 {
     protected static ?string $model = Menu::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-clipboard-document-list';
 
-    protected static ?string $navigationGroup = 'Site';
+    protected static string | \UnitEnum | null $navigationGroup = 'Site';
 
     protected static ?string $navigationLabel = 'Navigation';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form->schema([
-            Forms\Components\Repeater::make('items')
+        return $schema->components([
+            Repeater::make('items')
                 ->schema([
-                    Forms\Components\Grid::make(2)->schema([
-                        Forms\Components\TextInput::make('title')
+                    Grid::make(2)->schema([
+                        TextInput::make('title')
                             ->required()
                             ->columnSpan(1),
 
-                        Forms\Components\TextInput::make('url')
+                        TextInput::make('url')
                             ->required()
                             ->columnSpan(1),
                     ]),
 
-                    Forms\Components\Radio::make('type')
+                    Radio::make('type')
                         ->options([
                             'internal' => 'internal',
                             'external' => 'external',
@@ -52,15 +58,15 @@ class MenuResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                TextColumn::make('name'),
             ])
-            ->actions([
-                Tables\Actions\ActionGroup::make([
-                    Tables\Actions\EditAction::make(),
+            ->recordActions([
+                ActionGroup::make([
+                    EditAction::make(),
                 ]),
             ])
             ->filters([])
-            ->bulkActions([]);
+            ->toolbarActions([]);
     }
 
     public static function getRelations(): array
@@ -73,8 +79,8 @@ class MenuResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListMenus::route('/'),
-            'edit' => Pages\EditMenu::route('/{record}/edit'),
+            'index' => ListMenus::route('/'),
+            'edit' => EditMenu::route('/{record}/edit'),
             // 'create' => Pages\CreateMenu::route('/create'),
         ];
     }

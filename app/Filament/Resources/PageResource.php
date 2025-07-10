@@ -3,12 +3,19 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Fields\PageContent;
-use App\Filament\Resources\PageResource\Pages;
+use App\Filament\Resources\PageResource\Pages\CreatePage;
+use App\Filament\Resources\PageResource\Pages\EditPage;
+use App\Filament\Resources\PageResource\Pages\ListPages;
 use App\Models\Page;
-use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Components\Actions;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Pboivin\FilamentPeek\Forms\Actions\InlinePreviewAction;
@@ -18,15 +25,15 @@ class PageResource extends Resource
 {
     protected static ?string $model = Page::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-document';
 
-    protected static ?string $navigationGroup = 'Site';
+    protected static string | \UnitEnum | null $navigationGroup = 'Site';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form->schema([
-            Forms\Components\Grid::make()->columns(2)->schema([
-                Forms\Components\TextInput::make('title')
+        return $schema->components([
+            Grid::make()->columns(2)->schema([
+                TextInput::make('title')
                     ->columnSpan(1)
                     ->required()
                     ->lazy()
@@ -37,16 +44,16 @@ class PageResource extends Resource
                         $set('slug', Str::slug($state));
                     }),
 
-                Forms\Components\TextInput::make('slug')
+                TextInput::make('slug')
                     ->required()
                     ->columnSpan(1)
                     ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
             ]),
 
-            Forms\Components\Actions::make([
-                InlinePreviewAction::make()
-                    ->label('Open Content Editor')
-                    ->builderName('content')
+            Actions::make([
+                // InlinePreviewAction::make()
+                //     ->label('Open Content Editor')
+                //     ->builderName('content')
             ])
                 ->columnSpanFull()
                 ->alignEnd(),
@@ -60,27 +67,27 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                TextColumn::make('title')
                     ->sortable()
                     ->searchable(),
             ])
-            ->actions([
-                Tables\Actions\ActionGroup::make([
-                    ListPreviewAction::make(),
-                    Tables\Actions\EditAction::make(),
-                    Tables\Actions\DeleteAction::make(),
+            ->recordActions([
+                ActionGroup::make([
+                    // ListPreviewAction::make(),
+                    EditAction::make(),
+                    DeleteAction::make(),
                 ]),
             ])
             ->filters([])
-            ->bulkActions([]);
+            ->toolbarActions([]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPages::route('/'),
-            'create' => Pages\CreatePage::route('/create'),
-            'edit' => Pages\EditPage::route('/{record}/edit'),
+            'index' => ListPages::route('/'),
+            'create' => CreatePage::route('/create'),
+            'edit' => EditPage::route('/{record}/edit'),
         ];
     }
 }

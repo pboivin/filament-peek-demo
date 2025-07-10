@@ -2,13 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CategoryResource\Pages;
+use App\Filament\Resources\CategoryResource\Pages\ManageCategories;
 use App\Models\Category;
-use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
+use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
@@ -16,19 +19,19 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-tag';
 
-    protected static ?string $navigationGroup = 'Blog';
+    protected static string | \UnitEnum | null $navigationGroup = 'Blog';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form->schema([
-            Forms\Components\TextInput::make('name')
+        return $schema->components([
+            TextInput::make('name')
                 ->required()
                 ->lazy()
                 ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
 
-            Forms\Components\TextInput::make('slug')
+            TextInput::make('slug')
                 ->required()
                 ->lazy()
                 ->afterStateUpdated(fn ($set, $state) => $set('slug', Str::slug($state))),
@@ -39,19 +42,19 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make('posts_count')
+                TextColumn::make('posts_count')
                     ->label('Posts')
                     ->counts('posts'),
             ])
-            ->actions([
-                Tables\Actions\ActionGroup::make([
-                    Tables\Actions\EditAction::make(),
+            ->recordActions([
+                ActionGroup::make([
+                    EditAction::make(),
 
-                    Tables\Actions\DeleteAction::make()
+                    DeleteAction::make()
                         ->before(function ($record, $action) {
                             if ($record->posts()->count() > 0) {
                                 Notification::make()
@@ -65,13 +68,13 @@ class CategoryResource extends Resource
                 ]),
             ])
             ->filters([])
-            ->bulkActions([]);
+            ->toolbarActions([]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCategories::route('/'),
+            'index' => ManageCategories::route('/'),
         ];
     }
 }

@@ -2,12 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ContactEntryResource\Pages;
+use App\Filament\Resources\ContactEntryResource\Pages\ListContactEntries;
+use App\Filament\Resources\ContactEntryResource\Pages\ViewContactEntry;
 use App\Models\ContactEntry;
-use Filament\Infolists;
-use Filament\Infolists\Infolist;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\HtmlString;
 
@@ -15,24 +19,24 @@ class ContactEntryResource extends Resource
 {
     protected static ?string $model = ContactEntry::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-envelope';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-envelope';
 
-    protected static ?string $navigationGroup = 'Contact';
+    protected static string | \UnitEnum | null $navigationGroup = 'Contact';
 
-    public static function infolist(Infolist $infolist): Infolist
+    public static function infolist(Schema $schema): Schema
     {
-        return $infolist->schema([
-            Infolists\Components\TextEntry::make('created_at')
+        return $schema->components([
+            TextEntry::make('created_at')
                 ->label('Date')
                 ->columnSpanFull(),
 
-            Infolists\Components\TextEntry::make('name')
+            TextEntry::make('name')
                 ->columnSpanFull(),
 
-            Infolists\Components\TextEntry::make('email')
+            TextEntry::make('email')
                 ->columnSpanFull(),
 
-            Infolists\Components\TextEntry::make('message')
+            TextEntry::make('message')
                 ->formatStateUsing(fn ($state) => new HtmlString(nl2br($state)))
                 ->columnSpanFull(),
         ]);
@@ -42,19 +46,19 @@ class ContactEntryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->label('Date')
                     ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('name')->sortable(),
-                Tables\Columns\TextColumn::make('email')->sortable(),
+                TextColumn::make('name')->sortable(),
+                TextColumn::make('email')->sortable(),
             ])
-            ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                ViewAction::make(),
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                DeleteBulkAction::make(),
             ])
             ->defaultSort('created_at', 'desc');
     }
@@ -62,8 +66,8 @@ class ContactEntryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListContactEntries::route('/'),
-            'view' => Pages\ViewContactEntry::route('/{record}'),
+            'index' => ListContactEntries::route('/'),
+            'view' => ViewContactEntry::route('/{record}'),
             // 'create' => Pages\CreateContactEntry::route('/create'),
             // 'edit' => Pages\EditContactEntry::route('/{record}/edit'),
         ];
