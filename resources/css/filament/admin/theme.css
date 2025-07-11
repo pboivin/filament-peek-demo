@@ -2,5 +2,7 @@
 
 @import '../../../../vendor/pboivin/filament-peek/resources/css/plugin.css';
 
+@import '../../../../vendor/awcodes/filament-sticky-header/resources/css/plugin.css';
+
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
