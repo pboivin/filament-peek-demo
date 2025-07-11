@@ -76,13 +76,13 @@ class PostResource extends Resource
 
                 Section::make('Post Content')
                     ->schema([
-                        // Actions::make([
-                        //     InlinePreviewAction::make()
-                        //         ->label('Preview Content Blocks')
-                        //         ->builderName('content_blocks')
-                        // ])
-                        //     ->columnSpanFull()
-                        //     ->alignRight(),
+                        Actions::make([
+                            InlinePreviewAction::make()
+                                ->label('Preview Post Content')
+                                ->builderName('content_blocks')
+                        ])
+                            ->columnSpanFull()
+                            ->alignRight(),
 
                         PostContent::make('content_blocks')
                             ->label('Blocks')
@@ -91,14 +91,6 @@ class PostResource extends Resource
 
                 Section::make('Post Footer')
                     ->schema([
-                        // Actions::make([
-                        //     InlinePreviewAction::make()
-                        //         ->label('Open Footer Editor')
-                        //         ->builderName('footer_blocks')
-                        // ])
-                        //     ->columnSpanFull()
-                        //     ->alignRight(),
-
                         PostFooter::make('footer_blocks')
                             ->label('Blocks')
                             ->columnSpanFull(),
@@ -135,11 +127,11 @@ class PostResource extends Resource
                     ->sortable(),
             ])
             ->recordActions([
-                // ActionGroup::make([
-                //     ListPreviewAction::make(),
-                //     EditAction::make(),
-                //     DeleteAction::make(),
-                // ]),
+                ActionGroup::make([
+                    ListPreviewAction::make(),
+                    EditAction::make(),
+                    DeleteAction::make(),
+                ]),
             ])
             ->defaultSort('published_at', 'desc')
             ->filters([
