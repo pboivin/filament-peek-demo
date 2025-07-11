@@ -77,7 +77,7 @@ class PageResource extends Resource
             ])
             ->recordActions([
                 ActionGroup::make([
-                    // ListPreviewAction::make(),
+                    ListPreviewAction::make(),
                     EditAction::make(),
                     DeleteAction::make(),
                 ]),

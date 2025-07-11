@@ -135,11 +135,11 @@ class PostResource extends Resource
                     ->sortable(),
             ])
             ->recordActions([
-                // ActionGroup::make([
-                //     ListPreviewAction::make(),
-                //     EditAction::make(),
-                //     DeleteAction::make(),
-                // ]),
+                ActionGroup::make([
+                    ListPreviewAction::make(),
+                    EditAction::make(),
+                    DeleteAction::make(),
+                ]),
             ])
             ->defaultSort('published_at', 'desc')
             ->filters([

@@ -10,7 +10,7 @@ use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
 
 trait HasPagePreview
 {
-    // use HasPreviewModal;
+    use HasPreviewModal;
     // use HasBuilderPreview;
 
     protected function getActions(): array
