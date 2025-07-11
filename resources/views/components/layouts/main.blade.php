@@ -24,7 +24,7 @@
                             </div>
                         @endif
 
-                        <x-menu name="main" />
+                        <x-menu name="main" class="ml-auto" />
                     </nav>
                 </x-container>
             </header>
@@ -39,7 +39,7 @@
                 <x-container class="text-gray-700">
                     <div class="flex flex-col lg:flex-row items-center justify-center space-x-4">
                         <span>Copyright © {{ date('Y') }} ACME inc.</span>
-                        <x-menu name="footer" />
+                        <x-menu name="footer" class="lg:ml-auto" />
                     </div>
                 </x-container>
             </footer>
