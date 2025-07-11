@@ -12,13 +12,11 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
-use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
-use Pboivin\FilamentPeek\Forms\Actions\InlinePreviewAction;
 use Pboivin\FilamentPeek\Tables\Actions\ListPreviewAction;
 
 class PageResource extends Resource
@@ -53,14 +51,6 @@ class PageResource extends Resource
                             ->columnSpan(1)
                             ->afterStateUpdated(fn($set, $state) => $set('slug', Str::slug($state))),
                     ]),
-
-                Actions::make([
-                    // InlinePreviewAction::make()
-                    //     ->label('Open Content Editor')
-                    //     ->builderName('content')
-                ])
-                    ->columnSpanFull()
-                    ->alignEnd(),
 
                 PageContent::make('content')
                     ->required(),
