@@ -63,7 +63,9 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()->label('Contact'),
             ])
             ->plugins([
-                FilamentPeekPlugin::make(),
-            ]);
+                FilamentPeekPlugin::make()
+                    ->disablePluginStyles(),
+            ])
+            ->viteTheme('resources/css/filament/admin/theme.css');
     }
 }
