@@ -4,19 +4,17 @@ namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Fields\PostContent;
 use Filament\Schemas\Components\Component;
-use Pboivin\FilamentPeek\Pages\Actions\PreviewAction;
-use Pboivin\FilamentPeek\Pages\Concerns\HasBuilderPreview;
-use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
 
 trait HasPostPreview
 {
-    use HasPreviewModal;
-    use HasBuilderPreview;
+    // TODO
+    // use HasPreviewModal;
+    // use HasBuilderPreview;
 
     protected function getActions(): array
     {
         return [
-            PreviewAction::make()->label('Preview Post'),
+            // PreviewAction::make()->label('Preview Post'),
         ];
     }
 
