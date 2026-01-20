@@ -1,7 +1,6 @@
 @import '../../../../vendor/filament/filament/resources/css/theme.css';
 
-/* TODO */
-/* @import '../../../../vendor/pboivin/filament-peek/resources/css/plugin.css'; */
+@import '../../../../vendor/pboivin/filament-peek/resources/css/plugin.css';
 
 @import '../../../../vendor/awcodes/filament-sticky-header/resources/css/plugin.css';
 
