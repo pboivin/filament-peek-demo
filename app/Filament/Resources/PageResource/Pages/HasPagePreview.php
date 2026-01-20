@@ -2,17 +2,15 @@
 
 namespace App\Filament\Resources\PageResource\Pages;
 
-use Pboivin\FilamentPeek\Pages\Actions\PreviewAction;
-use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
-
 trait HasPagePreview
 {
-    use HasPreviewModal;
+    // TODO
+    // use HasPreviewModal;
 
     protected function getActions(): array
     {
         return [
-            PreviewAction::make()->label('Preview Page'),
+            // PreviewAction::make()->label('Preview Page'),
         ];
     }
 

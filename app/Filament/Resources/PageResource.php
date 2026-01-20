@@ -17,7 +17,6 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
-use Pboivin\FilamentPeek\Tables\Actions\ListPreviewAction;
 
 class PageResource extends Resource
 {
@@ -67,7 +66,8 @@ class PageResource extends Resource
             ])
             ->recordActions([
                 ActionGroup::make([
-                    ListPreviewAction::make(),
+                    // TODO
+                    // ListPreviewAction::make(),
                     EditAction::make(),
                     DeleteAction::make(),
                 ]),
