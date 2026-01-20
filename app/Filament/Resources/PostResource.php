@@ -27,6 +27,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use Pboivin\FilamentPeek\Tables\Actions\ListPreviewAction;
 
 class PostResource extends Resource
 {
@@ -74,14 +75,14 @@ class PostResource extends Resource
 
                 Section::make('Post Content')
                     ->schema([
-                        Actions::make([
-                            // TODO
-                            // InlinePreviewAction::make()
-                            //     ->label('Preview Post Content')
-                            //     ->builderName('content_blocks')
-                        ])
-                            ->columnSpanFull()
-                            ->alignRight(),
+                        // TODO: Remove
+                        // Actions::make([
+                        //     InlinePreviewAction::make()
+                        //         ->label('Preview Post Content')
+                        //         ->builderName('content_blocks')
+                        // ])
+                        //     ->columnSpanFull()
+                        //     ->alignRight(),
 
                         PostContent::make('content_blocks')
                             ->label('Blocks')
@@ -127,8 +128,7 @@ class PostResource extends Resource
             ])
             ->recordActions([
                 ActionGroup::make([
-                    // TODO
-                    // ListPreviewAction::make(),
+                    ListPreviewAction::make(),
                     EditAction::make(),
                     DeleteAction::make(),
                 ]),

@@ -2,19 +2,17 @@
 
 namespace App\Filament\Resources\PostResource\Pages;
 
-use App\Filament\Fields\PostContent;
-use Filament\Schemas\Components\Component;
+use Pboivin\FilamentPeek\Pages\Actions\PreviewAction;
+use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
 
 trait HasPostPreview
 {
-    // TODO
-    // use HasPreviewModal;
-    // use HasBuilderPreview;
+    use HasPreviewModal;
 
     protected function getActions(): array
     {
         return [
-            // PreviewAction::make()->label('Preview Post'),
+            PreviewAction::make()->label('Preview Post'),
         ];
     }
 
@@ -28,15 +26,17 @@ trait HasPostPreview
         return 'post';
     }
 
-    protected function getBuilderPreviewView(string $builderName): ?string
-    {
-        return 'post.preview-content';
-    }
+    // TODO: Remove
 
-    public static function getBuilderEditorSchema(string $builderName): Component|array
-    {
-        return PostContent::make(name: 'content_blocks', context: 'preview')
-            ->label('Content')
-            ->columnSpanFull();
-    }
+    // protected function getBuilderPreviewView(string $builderName): ?string
+    // {
+    //     return 'post.preview-content';
+    // }
+
+    // public static function getBuilderEditorSchema(string $builderName): Component|array
+    // {
+    //     return PostContent::make(name: 'content_blocks', context: 'preview')
+    //         ->label('Content')
+    //         ->columnSpanFull();
+    // }
 }

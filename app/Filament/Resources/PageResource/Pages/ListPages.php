@@ -5,11 +5,11 @@ namespace App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Pboivin\FilamentPeek\Pages\Concerns\HasPreviewModal;
 
 class ListPages extends ListRecords
 {
-    // TODO
-    // use HasPreviewModal;
+    use HasPreviewModal;
 
     protected static string $resource = PageResource::class;
 
