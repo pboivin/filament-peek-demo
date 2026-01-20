@@ -7,15 +7,15 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "awcodes/filament-sticky-header": "^3.0",
-        "filament/filament": "^4.0",
+        "awcodes/filament-sticky-header": "^4.0",
+        "filament/filament": "^5.0",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
-        "livewire/livewire": "^3.6",
-        "pboivin/filament-peek": "3.x-dev"
+        "livewire/livewire": "^4.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "filament/upgrade": "^5.0",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.41",
