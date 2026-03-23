@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Page;
+use App\Models\Post;
 use Illuminate\Support\Str;
+use Pboivin\FilamentPeek\CachedPreview;
 
 return [
 
@@ -125,6 +128,12 @@ return [
     |
     */
 
-    'serializable_classes' => false,
+    // HERE
+
+    'serializable_classes' => [
+        CachedPreview::class,
+        Page::class,
+        Post::class,
+    ],
 
 ];
