@@ -128,10 +128,10 @@ return [
     |
     */
 
-    // HERE
-
     'serializable_classes' => [
+        // @TODO: Remove this after fix in Peek core
         CachedPreview::class,
+
         Page::class,
         Post::class,
     ],
