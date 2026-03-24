@@ -3,7 +3,6 @@
 use App\Models\Page;
 use App\Models\Post;
 use Illuminate\Support\Str;
-use Pboivin\FilamentPeek\CachedPreview;
 
 return [
 
@@ -129,9 +128,6 @@ return [
     */
 
     'serializable_classes' => [
-        // @TODO: Remove this after fix in Peek core
-        CachedPreview::class,
-
         Page::class,
         Post::class,
     ],
