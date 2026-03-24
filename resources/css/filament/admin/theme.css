@@ -6,3 +6,5 @@
 
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
+@source '../../../../vendor/pboivin/filament-peek/**/*.php';
+@source '../../../../vendor/awcodes/filament-sticky-header/**/*.php';
