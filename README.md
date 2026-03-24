@@ -8,10 +8,6 @@ This is a demo project showcasing the [Peek](https://github.com/pboivin/filament
 
 ---
 
-**Builder Field Preview and Editor**
-
-![Screenshots of the edit page and builder field preview](./art/02-builder-preview.jpg)
-
 ## Initial setup
 
 ```sh
