@@ -127,9 +127,6 @@ return [
     |
     */
 
-    'serializable_classes' => [
-        Page::class,
-        Post::class,
-    ],
+    'serializable_classes' => false,
 
 ];
